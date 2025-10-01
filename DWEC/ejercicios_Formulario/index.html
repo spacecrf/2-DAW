@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <h3>Ejercicio 1</h3>
+            <!--Cuidado con los formularios, value. Otra cosa inerHtml-->
+            <form action id="formulario">
+                Numero 1: <input type="text" id="numero1"> <br>
+                Numero 2: <input type="text" id="numero2"> <br>
+
+                <input type="button" onclick="sumar()" value="Sumar"><br>
+                <span id="resultado"></span>
+            </form>
+        </div>
+        <hr>
+        <div>
+            <h3>Ejercicio 2</h3>
+            <!--Radio-->
+            <p>¿Elija?</p>
+
+            <input type="radio" id="Si" name="encuesta" value="Si">
+            <label for="Si">Si</label><span id="votosSi"></span><img
+                src="verde.png" id="img1" width="0"><br>
+            <input type="radio" id="No" name="encuesta" value="No">
+            <label for="No">No</label><span id="votosNo"></span><img
+                src="azul.png" id="img2" width="0"><br>
+            <input type="radio" id="Ns/nc" name="encuesta" value="Ns/nc">
+            <label for="Ns/nc">Ns/nc</label><span id="votosNs"></span><img
+                src="amarillo.png" id="img3" width="0"><br>
+            <button onclick="verOpcion()">votar</button>
+        </div>
+        <hr>
+        <div>
+            <h3>Ejercicio 3</h3>
+            <!--Select-->
+            <input type="text" id ="texto"> <button onclick="anade()">Añade</button>
+            <label for="pais">País:</label>
+            <select id="pais" onchange="alert(document.getElementById('pais').value)">">
+                <option value="us">Estados Unidos</option>
+                <option value="es">España</option>
+                <option value="mx">México</option>
+            </select>
+        </div>
+        <hr>
+        <div>
+            <h3>Ejercicio 4</h3>
+            <p>Escribe una palabra la cargas en el primer combo, si al elegir la primera palabra y no esta en el segundo combo la añade si no te dice que ya esta añadida</p>
+            <input type="text" id="Palabra"> <button onclick="anadirPalabra()">Ok</button>
+
+            <label for="palabra1"> Palabras: </label>
+            <select id="palabra1" onchange="document.getElementById('palabra').value">
+                
+            </select>
+
+            <button onclick="anadirPalabra2()">Añadir</button>
+            <label for="Palabra2">Palabras 2: </label>
+            <select id="Palabra2" onchange="document.getElementById('palabra').value">
+            
+            </select>
+        </div>
+        <hr>
+        <div>
+            <h3>Ejercicio 5</h3>
+            <p>Creacion de un combo dependiente</p>
+
+            <label for="lista">Lista</label>
+            <select id="lista1" onchange="cargarLista2()">
+                <option value="teclado">Teclado</option>
+                <option value="monitor">Monitor</option>
+                <option value="raton">Raton</option>
+                <option value="pc">Pc's</option>
+            </select>
+        </div>
+        <div>
+            <label for="lista2">Lista 2</label>
+            <select id="lista2">
+                
+            </select>
+        </div>
+    </body>
+    <script src="utiles.js"></script>
+</html>
