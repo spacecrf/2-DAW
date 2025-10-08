@@ -50,25 +50,25 @@ function borrar(x) {
     calcularTotal();
 }
 
-function editar(x) {
-    let fila = x.parentNode.parentNode;
-    let valores = x.parentNode.parentNode.children;
-    document.getElementById('codigo2').value = valores[0].innerHTML;
-    document.getElementById('descripcion2').value = valores[1].innerHTML;
-    document.getElementById('cantidad2').value = valores[2].innerHTML;
-    document.getElementById('precio2').value = valores[3].innerHTML;
+function autocompletarCampos(){
+    let codigo = document.getElementById("codigo").value;
+    let tabla2 = document.getElementById("tabla2");
+    let filas = tabla2.getElementsByTagName("tr");
 
-    document.getElementById('botonmodifica').onclick = function () {
-        valores[0].innerHTML = document.getElementById("codigo2").value;
-        valores[1].innerHTML = document.getElementById("descripcion2").value
-        valores[2].innerHTML = document.getElementById("cantidad2").value
-        valores[3].innerHTML = document.getElementById("precio2").value
-
-        let cantidad = parseFloat(document.getElementById('cantidad2').value)
-        let precio = parseFloat(document.getElementById('precio2').value)
-        valores[4].innerHTML = (cantidad * precio).toFixed(2);
-
-        calcularTotal();
+    for(let i = 0; i < filas.length; i++){
+        let codigoFila = filas[i].getElementsByTagName("td")[0].textContent;
+        if(codigoFila === codigo){
+            let descripcion = filas[i].getElementsByTagName("td")[1].textContent;
+            let precio = filas[i].getElementsByTagName("td")[2].textContent;
+            document.getElementById("descripcion").value = descripcion;
+            document.getElementById("precio").value = precio;
+            break;
+        }else{
+            document.getElementById("descripcion").value = "Indefinido";
+            document.getElementById("precio").value = "";
+        }
     }
 }
+
+
 

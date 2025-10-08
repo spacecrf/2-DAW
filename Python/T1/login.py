@@ -17,12 +17,15 @@ def registrar_usuario():
             continue
         # Recorremos la password para ver si cumple los requisitos con un array
         elif not any(char.isupper() for char in password):
+            #usamos cahr.isupper para ver si tenemos una mayscula
             print("La contraseña debe tener al menos una letra mayúscula.")
             continue
         elif not any(char.isdigit() for char in password):
+            #usamos cahr.isdigit para ver si tenemos un numero
             print("La contraseña debe tener al menos un número.")
             continue
         elif not any(not char.isalnum() for char in password):
+            #usamos char.isalnum para ver si tiene un caracter especial
             print("La contraseña debe tener al menos un caracter especial.")
             continue
         else:
@@ -42,12 +45,12 @@ def login_usuario():
     for intento in range(MAX_INTENTOS):
         password = input("Introduzca contraseña: ")
         if credenciales[usuario] == password:
-            print("Login exitoso. ¡Bienvenido!")
+            print("Login exitoso. ¡Bienvenido! " + usuario)
             return
         else:
             print(f"Contraseña incorrecta. Te quedan {MAX_INTENTOS - intento - 1} intentos.")
             if intento == MAX_INTENTOS :
-                print("Has excedido el número máximo de intentos. Acceso bloqueado.")
+                print("Has superado el número máximo de intentos. Acceso bloqueado.")
                 return
 
 while True:
