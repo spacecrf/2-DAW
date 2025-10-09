@@ -87,8 +87,8 @@ while True:
                     print("Demasiados intentos fallidos. Regresando al menú principal.")
 
     elif opcion == "3":
-        print("👋 Saliendo del programa...")
+        print("Saliendo del programa...")
         break
 
     else:
-        print("⚠️ Opción no válida. Intenta de nuevo.")
+        print("Opción no válida. Intenta de nuevo.")
