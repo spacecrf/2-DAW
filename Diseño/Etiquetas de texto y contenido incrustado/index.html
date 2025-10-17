@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejemplos de Listas Personalizadas</h1>
+
+    <h2> Lista no ordenada con viñetas por defecto</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h2> Lista no ordenada con viñetas cuadradas</h2>
+    <ul type="square">
+        <li>Rojo</li>
+        <li>Verde</li>
+        <li>Azul</li>
+    </ul>
+
+    <h2>Lista no ordenada con viñetas en forma de círculo</h2>
+    <ul type="circle">
+        <li>Perros</li>
+        <li>Gatos</li>
+        <li>Pájaros</li>
+    </ul>
+
+    <h2>Lista ordenada con números (por defecto)</h2>
+    <ol>
+        <li>Introducción</li>
+        <li>Desarrollo</li>
+        <li>Conclusión</li>
+    </ol>
+
+
+    <h2>Lista ordenada con letras mayúsculas</h2>
+    <ol type="A">
+        <li>Primero</li>
+        <li>Segundo</li>
+        <li>Tercero</li>
+    </ol>
+
+    <h2>Lista ordenada con números romanos</h2>
+    <ol type="I">
+        <li>Punto A</li>
+        <li>Punto B</li>
+        <li>Punto C</li>
+    </ol>
+
+    <h2>Lista ordenada que empieza en un número diferente</h2>
+    <ol start="5">
+        <li>Paso cinco</li>
+        <li>Paso seis</li>
+        <li>Paso siete</li>
+    </ol>
+
+    <h2>Lista anidada (lista dentro de otra)</h2>
+    <ul>
+        <li>Frutas
+            <ul type="square">
+                <li>Manzana</li>
+                <li>Plátano</li>
+                <li>Pera</li>
+            </ul>
+        </li>
+        <li>Verduras
+            <ul type="circle">
+                <li>Lechuga</li>
+                <li>Tomate</li>
+                <li>Zanahoria</li>
+            </ul>
+        </li>
+    </ul>
+<hr>
+    <h2>Lista ordenada con números romanos</h2>
+    <ol type="I">
+        <li><b>Punto A</b>: recopilación de <em>datos</em>.</li>
+        <li><b>Punto B</b>: análisis de la <strong>información</strong>.</li>
+        <li><b>Punto C</b>: presentación del <mark>informe final</mark>.</li>
+    </ol>
+
+    <h2> Lista ordenada que empieza en un número diferente</h2>
+    <ol start="5">
+        <li><b>Paso 5</b>: revisar el <u>documento</u>.</li>
+        <li><b>Paso 6</b>: realizar la <i>corrección</i> ortográfica.</li>
+        <li><b>Paso 7</b>: entregar el <strong>resultado final</strong>.</li>
+    </ol>
+
+    <h2> Lista anidada (lista dentro de otra)</h2>
+    <ul>
+        <li><b>Frutas</b>
+            <ul type="square">
+                <li><i>Manzana</i>: rica en <mark>fibra</mark> y vitaminas.</li>
+                <li><i>Plátano</i>: aporta mucha <u>energía</u>.</li>
+                <li><i>Pera</i>: tiene un sabor <em>suave</em> y refrescante.</li>
+            </ul>
+        </li>
+        <li><b>Verduras</b>
+            <ul type="circle">
+                <li><i>Lechuga</i>: ideal para <small>ensaladas</small>.</li>
+                <li><i>Tomate</i>: contiene <b>licopeno</b>, un <em>antioxidante</em> natural.</li>
+                <li><i>Zanahoria</i>: buena para la <u>vista</u> gracias a la <b>vitamina A</b>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Lista con texto y símbolos científicos</h2>
+    <ul type="square">
+        <li>El agua se representa como H<sub>2</sub>O.</li>
+        <li>La fórmula del ozono es O<sub>3</sub>.</li>
+        <li>La velocidad se mide en m/s<sup>2</sup>.</li>
+    </ul>
+<hr>
+    <h2> Atributo <code>target</code></h2>
+    <p>
+        El atributo <b>target</b> define cómo se abrirá el enlace.  
+        Los valores más comunes son:  
+        <ul>
+            <li><b>_blank</b>: abre el enlace en una nueva pestaña o ventana.</li>
+            <li><b>_self</b>: abre el enlace en la misma pestaña (valor por defecto).</li>
+            <li><b>_parent</b>: abre en el marco padre si hay frames.</li>
+            <li><b>_top</b>: abre en la ventana completa del navegador.</li>
+        </ul>
+
+        Ejemplos:  
+        🌍 <a href="https://www.wikipedia.org" target="_blank">Abrir Wikipedia en nueva pestaña</a><br>
+        📘 <a href="https://developer.mozilla.org/es/" target="_self">Abrir MDN en la misma pestaña</a>
+    </p>
+
+    <h2> Atributo <code>download</code></h2>
+    <p>
+        El atributo <b>download</b> permite que al hacer clic se descargue el archivo indicado en lugar de abrirlo.  
+        El valor del atributo indica el nombre con el que se guardará el archivo.
+
+        Ejemplos:  
+        📄 <a href="documento.pdf" download="Guia_HTML.pdf">Descargar guía de HTML</a><br>
+        📷 <a href="imagen.jpg" download="Foto_de_muestra.jpg">Descargar imagen de muestra</a>
+    </p>
+<hr>
+    <h2> Símbolos de uso común</h2>
+    <p>
+        &copy; Derechos reservados <br>
+        &reg; Marca registrada <br>
+        &trade; Marca comercial <br>
+        &euro; Euro &nbsp; | &nbsp; &dollar; Dólar &nbsp; | &nbsp; &pound; Libra &nbsp; | &nbsp; &yen; Yen <br>
+        &hearts; Corazón &nbsp; | &nbsp; &starf; Estrella &nbsp; | &nbsp; &check; Aprobado <br>
+    </p>
+
+    <h2>Lista con símbolos y etiquetas de texto</h2>
+    <ul>
+        <li><b>&#10003;</b> <i>Tarea completada</i></li>
+        <li><b>&#9889;</b> <em>Alta energía</em></li>
+        <li><b>&#128640;</b> <u>Lanzamiento exitoso</u></li>
+        <li><b>&#128214;</b> <mark>Lectura recomendada</mark></li>
+    </ul>
+<hr>
+
+<img src="paisaje.jpg" 
+     alt="Paisaje natural al atardecer" 
+     width="400" 
+     height="250" 
+     title="Haz clic para ver la imagen completa">
+<hr>
+<iframe width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="Video de YouTube" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+<hr>
+
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.917926280676!2d-3.703790084682361!3d40.4167759793641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4229978235fdfd%3A0x2b0c1a8c06f94b22!2sPuerta%20del%20Sol%2C%20Madrid!5e0!3m2!1ses!2ses!4v1696877800000!5m2!1ses!2ses" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+<hr>
+    <p>
+        Salta a la <a href="#seccion1">Sección 1</a>.<br>
+        Salta a la <a href="#seccion2">Sección 2</a>.
+    </p>
+    <p>
+        Visita <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> para más información.
+    </p>
+
+    <hr>
+
+ 
+    <h2 id="seccion1">Sección 1</h2>
+    <p>Esta es la primera sección. Aquí puedes volver al <a href="#top">inicio de la página</a>.</p>
+
+    <h2 id="seccion2">Sección 2</h2>
+    <p>Esta es la segunda sección. También puedes regresar al <a href="#top">inicio de la página</a>.</p>
+
+    <a id="top"></a>
+
+</body>
+
+</html>
