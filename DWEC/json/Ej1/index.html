@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Ejemplo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="cargarAutores()">
+    <div class="container mt-3">
+        <button class="btn btn-primary" onclick="cargaArticulos()">Cargar Artículos</button>
+        <br><br>
+
+        Buscar por ID: 
+        <input type="text" id="texto">
+        <button class="btn btn-success btn-sm" onclick="muestra()">Mostrar</button>
+        <br><br>
+
+        Autor: 
+        <select id="autor" onchange="filtrarPorAutor()">
+            <option value="">Seleccione autor</option>
+        </select>
+
+        <br><br>
+
+        <table id="tablaArticulos" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Contenido</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="utiles.js"></script>
+</body>
+</html>
