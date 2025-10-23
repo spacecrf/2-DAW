@@ -1,0 +1,97 @@
+/* Estilo general */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* Encabezado */
+header {
+    background-color: #324a5e;
+    color: #fff;
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.3em;
+}
+
+header p {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+header img {
+    width: 6em;
+    border-radius: 50%;
+    margin-top: 1.2em;
+    border: 0.3em solid #fff;
+}
+
+main {
+    padding: 2.5em 7%;
+}
+
+article p {
+    font-size: 1rem;
+    line-height: 1.8em;
+}
+
+article h2 {
+    color: #243a4a;
+    border-bottom: 0.15em solid #ffcc00;
+    display: inline-block;
+    margin-bottom: 0.8em;
+}
+
+article:nth-child(odd) {
+    background-color: #f5f8fa;
+}
+
+article:nth-child(even) {
+    background-color: #e9f0f8;
+}
+
+article {
+    padding: 2em;
+    margin-bottom: 1.5em;
+    border-radius: 1em;
+    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.05);
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 1.5em;
+}
+
+footer {
+    background-color: #324a5e;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5em 0;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.copy {
+    margin-top: 0.8em;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    font-style: italic;
+}
