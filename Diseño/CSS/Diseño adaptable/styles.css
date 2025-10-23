@@ -1,5 +1,6 @@
-/* Estilo general */
+/* ---------- ESTILO GENERAL ---------- */
 body {
+    /* Fuente principal y colores básicos del texto y fondo */
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,26 +8,30 @@ body {
     background-color: #ffffff;
 }
 
-/* Encabezado */
+/* ---------- ENCABEZADO ---------- */
 header {
+    /* Fondo oscuro, texto blanco y centrado */
     background-color: #324a5e;
     color: #fff;
     text-align: center;
     padding: 2.5em 0;
 }
 
+/* Título principal del CV */
 header h1 {
     font-size: 1.8rem;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.05em; /* Espacio entre letras */
     margin-bottom: 0.3em;
 }
 
+/* Subtítulo debajo del nombre */
 header p {
     font-size: 1.1rem;
     font-style: italic;
-    opacity: 0.9;
+    opacity: 0.9; /* Un poco más claro que el texto normal */
 }
 
+/* Imagen de perfil redonda con borde blanco */
 header img {
     width: 6em;
     border-radius: 50%;
@@ -34,42 +39,51 @@ header img {
     border: 0.3em solid #fff;
 }
 
+/* ---------- CONTENIDO PRINCIPAL ---------- */
 main {
+    /* Espacio interno para que el contenido no quede pegado a los bordes */
     padding: 2.5em 7%;
 }
 
+/* Texto dentro de los artículos: tamaño normal y más espacio entre líneas */
 article p {
     font-size: 1rem;
     line-height: 1.8em;
 }
 
+/* Títulos de secciones (MI PERFIL, MI EXPERIENCIA, etc.) */
 article h2 {
     color: #243a4a;
-    border-bottom: 0.15em solid #ffcc00;
+    border-bottom: 0.15em solid #ffcc00; /* Línea decorativa amarilla */
     display: inline-block;
     margin-bottom: 0.8em;
 }
 
+/* Fondo alterno en los artículos impares */
 article:nth-child(odd) {
     background-color: #f5f8fa;
 }
 
+/* Fondo alterno en los artículos pares */
 article:nth-child(even) {
     background-color: #e9f0f8;
 }
 
+/* Estilo general de los artículos */
 article {
     padding: 2em;
     margin-bottom: 1.5em;
-    border-radius: 1em;
-    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.05);
+    border-radius: 1em; /* Bordes redondeados */
+    box-shadow: 0 0.3em 0.8em rgba(0, 0, 0, 0.05); /* Sombra suave */
 }
 
+/* Estilo de las listas (formación, etc.) */
 ul {
-    list-style-type: square;
-    padding-left: 1.5em;
+    list-style-type: square; /* Viñetas cuadradas */
+    padding-left: 1.5em; /* Espacio a la izquierda */
 }
 
+/* ---------- PIE DE PÁGINA ---------- */
 footer {
     background-color: #324a5e;
     color: #ffffff;
@@ -78,17 +92,20 @@ footer {
     font-size: 0.95rem;
 }
 
+/* Enlaces del pie de página */
 footer a {
-    color: #ffcc00;
+    color: #ffcc00; /* Amarillo */
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Al pasar el ratón por los enlaces */
 footer a:hover {
     color: #ffffff;
     text-decoration: underline;
 }
 
+/* Estilo del texto de copyright */
 .copy {
     margin-top: 0.8em;
     font-size: 0.85rem;
