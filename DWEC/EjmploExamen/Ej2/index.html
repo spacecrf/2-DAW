@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Facturas</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 8px; }
+    #articulosModal { display: none; position: absolute; background: #f9f9f9; border: 1px solid #ccc; padding: 10px; max-height: 200px; overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <h2>Formulario de Factura</h2>
+  <form id="facturaForm">
+    <label>Código: <input type="text" id="codigo"></label>
+    <button type="button" onclick="mostrarArticulos()">Buscar</button><br><br>
+    <label>Descripción: <input type="text" id="descripcion" readonly></label><br><br>
+    <label>Precio: <input type="number" id="precio" readonly></label><br><br>
+    <label>Cantidad: <input type="number" id="cantidad" value="1"></label><br><br>
+    <label>Subtotal: <input type="number" id="subtotal" readonly></label><br><br>
+    <button type="button" onclick="insertarLinea()">Insertar</button>
+  </form>
+
+  <h3>Detalles de la Factura</h3>
+  <table id="tablaFactura">
+    <thead>
+      <tr><th>Código</th><th>Descripción</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <p>Base: <span id="base">0</span> €</p>
+  <p>Total con IVA (21%): <span id="total">0</span> €</p>
+
+  <div id="articulosModal">
+    <input type="text" id="buscador" placeholder="Buscar descripción..." oninput="filtrarArticulos()"><br><br>
+    <table id="tablaArticulos">
+      <thead><tr><th>Código</th><th>Descripción</th><th>Precio</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="utiles.js"></script>
+</body>
+</html>
