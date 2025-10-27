@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulario HTML5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Ejercicio 2: estilo de la tabla (tal cual lo pide el enunciado) -->
+        <style>
+
+    table, tr, th, td {
+    border: 1px solid black;
+    }
+
+    
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.35; padding: 1.25rem; }
+    h2 { margin-top: 2rem; }
+    fieldset { border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; }
+    legend { font-weight: 600; }
+    label { display: block; margin-top: .5rem; }
+    input, select, button { padding: .5rem; margin-top: .25rem; max-width: 420px; width: 100%; }
+    .row { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .inline { display: inline-block; width: auto; }
+    .help { color: #555; font-size: .9rem; }
+    .note { font-size: .9rem; color: #444; }
+    .small { max-width: 200px; }
+    .btns { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .75rem; }
+    .ok { background:#0a7; color:#fff; border: none; }
+    .reset { background:#eee; border:1px solid #ccc; }
+</style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Formulario HTML5</h1>
+            <p class="note">Página de entrega con los 5 ejercicios
+                integrados.</p>
+        </header>
+
+        <!-- 
+       EJERCICIO 1
+       Un formulario con los campos indicados. 
+       Requisitos:
+       - Título de la página: Formulario HTML5 (hecho en <title>)
+       - Método de envío: GET
+       - action (destino) vacío: ""
+        -->
+        <section id="ej1">
+            <h2>1) Formulario con controles HTML5</h2>
+
+            <form id="ej1-form" action method="get">
+                <fieldset>
+                    <legend>Datos del formulario</legend>
+
+                    <label for="nombre">Nombre <span
+                            aria-hidden="true">*</span></label>
+                    <input id="nombre" name="nombre" type="text" required
+                        autofocus>
+
+                    <label for="correo">Correo electrónico <span
+                            aria-hidden="true">*</span></label>
+                    <input id="correo" name="correo" type="email" required>
+
+                    <label for="url">URL</label>
+                    <input id="url" name="url" type="url"
+                        placeholder="URL de tu página web personal"
+                        aria-describedby="urlHelp">
+                    <div id="urlHelp" class="help">URL de tu página web
+                        personal</div>
+
+                    <div class="row">
+                        <div>
+                            <label for="fecha">Fecha</label>
+                            <input id="fecha" name="fecha" type="date">
+                        </div>
+                        <div>
+                            <label for="tiempo">Tiempo</label>
+                            <input id="tiempo" name="tiempo" type="time">
+                        </div>
+                        <div>
+                            <label for="fechahora">Fecha y hora</label>
+                            <input id="fechahora" name="fechahora"
+                                type="datetime-local">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label for="mes">Mes</label>
+                            <input id="mes" name="mes" type="month">
+                        </div>
+                        <div>
+                            <label for="semana">Semana</label>
+                            <input id="semana" name="semana" type="week">
+                        </div>
+                        <div>
+                            <label for="numero">Número (entre -10 y 10)</label>
+                            <input id="numero" name="numero" type="number"
+                                min="-10" max="10" step="1" value="0">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label for="tel">Teléfono</label>
+                            <input id="tel" name="tel" type="tel"
+                                placeholder="+34 600 000 000" inputmode="tel">
+                        </div>
+                        <div>
+                            <label for="busqueda">Término de búsqueda</label>
+                            <input id="busqueda" name="busqueda" type="search"
+                                placeholder="¿Qué quieres buscar?">
+                        </div>
+                        <div>
+                            <label for="color">Color favorito</label>
+                            <input id="color" name="color" type="color"
+                                value="#3366ff">
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="ok" type="submit">Enviar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- 
+       EJERCICIO 2
+       Tabla con el estilo solicitado (border 1px sólido para table, tr, th, td)
+        -->
+        <section id="ej2">
+            <h2>2) Tabla con borde</h2>
+
+            <table>
+                <caption>Ejemplo de tabla</caption>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana</td>
+                        <td>ana@example.com</td>
+                        <td>600 123 123</td>
+                    </tr>
+                    <tr>
+                        <td>Luis</td>
+                        <td>luis@example.com</td>
+                        <td>600 456 456</td>
+                    </tr>
+                    <tr>
+                        <td>Mar</td>
+                        <td>mar@example.com</td>
+                        <td>600 789 789</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 
+       EJERCICIO 3
+       Búsqueda en dos motores (Google y Bing) + casilla "Imágenes"
+       - Si se marca "Imágenes": Google usa tbm=isch; Bing usa /images/
+        -->
+        <section id="ej3">
+            <h2>3) Buscar en Google o Bing (con opción de Imágenes)</h2>
+
+            <form id="multiSearch" onsubmit="return doMultiSearch(event)">
+                <fieldset>
+                    <legend>Buscador multi-motor</legend>
+                    <label for="ms-q">Consulta</label>
+                    <input id="ms-q" name="q" type="search"
+                        placeholder="Escribe aquí…" required>
+
+                    <div class="row">
+                        <div>
+                            <label for="ms-engine">Motor</label>
+                            <select id="ms-engine" name="engine" required>
+                                <option value="google" selected>Google</option>
+                                <option value="bing">Bing</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="inline" for="ms-images">
+                                <input id="ms-images" class="inline"
+                                    type="checkbox"> Buscar en
+                                <strong>imágenes</strong> en vez de texto
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="ok" type="submit">Buscar</button>
+                        <button class="reset" type="reset">Reiniciar</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p class="note">
+                En Google, el modo imágenes se activa con el parámetro
+                <code>tbm=isch</code>; en Bing, se usa la ruta
+                <code>/images/</code> en la URL.
+                [1](https://serpapi.com/blog/filtering-google-images-and-google-videos-results/)
+            </p>
+        </section>
+
+        <!-- 
+       EJERCICIO 4
+       Completar el formulario de pago
+       (HTML5 + validación básica con patrones y autocompletado)
+        -->
+        <section id="ej4">
+            <h2>4) Formulario de pago</h2>
+
+            <form id="pago" action method="post" autocomplete="on"
+                onsubmit="return validarPago()">
+                <fieldset>
+                    <legend>Pago con tarjeta</legend>
+
+                    <label for="cc-name">Nombre en la tarjeta <span
+                            aria-hidden="true">*</span></label>
+                    <input id="cc-name" name="cc-name" type="text"
+                        autocomplete="cc-name" required
+                        placeholder="Nombre y apellidos">
+
+                    <label for="cc-number">Número de tarjeta <span
+                            aria-hidden="true">*</span></label>
+                    <input id="cc-number" name="cc-number" type="text"
+                        inputmode="numeric" autocomplete="cc-number"
+                        placeholder="1234 5678 9012 3456"
+                        pattern="^[0-9 ]{13,19}$" required>
+
+                    <div class="row">
+                        <div>
+                            <label for="cc-exp">Caducidad (MM/AA) <span
+                                    aria-hidden="true">*</span></label>
+                            <input id="cc-exp" name="cc-exp" type="text"
+                                inputmode="numeric" autocomplete="cc-exp"
+                                placeholder="MM/AA"
+                                pattern="^(0[1-9]|1[0-2])\/\d{2}$" required
+                                class="small">
+                        </div>
+                        <div>
+                            <label for="cc-cvc">CVC/CVV <span
+                                    aria-hidden="true">*</span></label>
+                            <input id="cc-cvc" name="cc-cvc" type="password"
+                                inputmode="numeric" autocomplete="cc-csc"
+                                placeholder="3–4 dígitos" pattern="^\d{3,4}$"
+                                required class="small">
+                        </div>
+                        <div>
+                            <label for="cc-brand">Tipo de tarjeta</label>
+                            <select id="cc-brand" name="cc-brand">
+                                <option value>(Selecciona)</option>
+                                <option>Visa</option>
+                                <option>Mastercard</option>
+                                <option>American Express</option>
+                                <option>Maestro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="billing-address">Dirección de
+                        facturación</label>
+                    <input id="billing-address" name="billing-address"
+                        type="text" autocomplete="address-line1"
+                        placeholder="Calle y número">
+
+                    <div class="row">
+                        <div>
+                            <label for="billing-city">Ciudad</label>
+                            <input id="billing-city" name="billing-city"
+                                type="text" autocomplete="address-level2">
+                        </div>
+                        <div>
+                            <label for="billing-zip">Código postal</label>
+                            <input id="billing-zip" name="billing-zip"
+                                type="text" inputmode="numeric"
+                                autocomplete="postal-code" pattern="^\d{4,10}$">
+                        </div>
+                        <div>
+                            <label for="billing-country">País</label>
+                            <select id="billing-country" name="billing-country"
+                                autocomplete="country">
+                                <option value="ES" selected>España</option>
+                                <option value="PT">Portugal</option>
+                                <option value="FR">Francia</option>
+                                <option value="IT">Italia</option>
+                                <option value="DE">Alemania</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="ok" type="submit">Pagar</button>
+                        <button class="reset" type="reset">Cancelar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- 
+       EJERCICIO 5
+       Formulario (listas desplegables) para buscar imágenes en Google
+       - Filtros: tamaño, color, tipo, fecha y licencia
+       - Botones: Reiniciar y Buscar
+       - Construye la URL usando tbm=isch y tbs=...
+        -->
+        <section id="ej5">
+            <h2>5) Buscador de imágenes en Google con filtros</h2>
+
+            <form id="googleImages" onsubmit="return buscarGoogleImages(event)">
+                <fieldset>
+                    <legend>Google Imágenes (filtros avanzados)</legend>
+
+                    <label for="gi-q">Consulta</label>
+                    <input id="gi-q" name="q" type="search"
+                        placeholder="p. ej., atardecer en la playa" required>
+
+                    <div class="row">
+                        <div>
+                            <label for="gi-size">Tamaño</label>
+                            <select id="gi-size" name="size">
+                                <option value>Cualquiera</option>
+                                <option value="isz:l">Grande</option>
+                                <option value="isz:m">Mediano</option>
+                                <option value="isz:i">Icono</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="gi-color">Color</label>
+                            <select id="gi-color" name="color">
+                                <option value>Cualquiera</option>
+                                <option value="ic:color">A color</option>
+                                <option value="ic:gray">Blanco y negro</option>
+                                <option value="ic:trans">Fondo
+                                    transparente</option>
+                                <option
+                                    value="ic:specific,isc:red">Rojo</option>
+                                <option
+                                    value="ic:specific,isc:orange">Naranja</option>
+                                <option
+                                    value="ic:specific,isc:yellow">Amarillo</option>
+                                <option
+                                    value="ic:specific,isc:green">Verde</option>
+                                <option
+                                    value="ic:specific,isc:teal">Turquesa</option>
+                                <option
+                                    value="ic:specific,isc:blue">Azul</option>
+                                <option
+                                    value="ic:specific,isc:purple">Morado</option>
+                                <option
+                                    value="ic:specific,isc:pink">Rosa</option>
+                                <option
+                                    value="ic:specific,isc:white">Blanco</option>
+                                <option
+                                    value="ic:specific,isc:gray">Gris</option>
+                                <option
+                                    value="ic:specific,isc:black">Negro</option>
+                                <option
+                                    value="ic:specific,isc:brown">Marrón</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="gi-type">Tipo</label>
+                            <select id="gi-type" name="type">
+                                <option value>Cualquiera</option>
+                                <option value="itp:photo">Foto</option>
+                                <option value="itp:clipart">Clipart</option>
+                                <option value="itp:lineart">Dibujo
+                                    lineal</option>
+                                <option value="itp:animated">Animadas
+                                    (GIF)</option>
+                                <option value="itp:face">Rostros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="gi-time">Fecha</label>
+                            <select id="gi-time" name="time">
+                                <option value>Cualquier fecha</option>
+                                <option value="qdr:d">Últimas 24 horas</option>
+                                <option value="qdr:w">Última semana</option>
+                                <option value="qdr:m">Último mes</option>
+                                <option value="qdr:y">Último año</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="gi-license">Licencia</label>
+                            <select id="gi-license" name="license">
+                                <option value>Todas</option>
+                                <option value="sur:cl">Creative Commons</option>
+                                <option value="sur:ol">Comerciales y
+                                    otras</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="btns">
+                        <button class="ok" type="submit">Buscar</button>
+                        <button class="reset" type="reset">Reiniciar</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p class="note">
+                Este buscador construye la URL con <code>tbm=isch</code> (modo
+                imágenes) y compone el parámetro
+                <code>tbs</code> uniendo los filtros seleccionados (por ejemplo:
+                <code>isz:l,ic:gray,itp:photo,qdr:w,sur:cl</code>).
+                Los valores de <strong>tamaño</strong> (<code>isz:</code>),
+                <strong>color</strong> (<code>ic:</code>), <strong>tipo</strong>
+                (<code>itp:</code>),
+                <strong>fecha</strong> (<code>qdr:</code>) y
+                <strong>licencia</strong> (<code>sur:</code>) son los que usa
+                Google Imágenes.
+                [1](https://serpapi.com/blog/filtering-google-images-and-google-videos-results/)[2](https://docs.hasdata.com/apis/google-images/images)[3](https://dataforseo.com/help-center/google-search-engine-parameters-and-how-to-use-them)
+            </p>
+        </section>
+
+        <!-- Scripts de la página -->
+        <script>
+    // Ejercicio 3: 
+    function doMultiSearch(e) {
+      e.preventDefault();
+      const q = document.getElementById('ms-q').value.trim();
+      const engine = document.getElementById('ms-engine').value;
+      const images = document.getElementById('ms-images').checked;
+      if (!q) return false;
+
+      let url = '';
+      if (engine === 'google') {
+
+        url = 'https://www.google.com/search?' + (images ? 'tbm=isch&' : '') + 'q=' + encodeURIComponent(q);
+      } else if (engine === 'bing') {
+
+        url = 'https://www.bing.com/' + (images ? 'images/' : '') + 'search?q=' + encodeURIComponent(q);
+      }
+      window.open(url, '_blank');
+      return false;
+    }
+
+    // Ejercicio 4: validación simple del formulario de pago
+    function validarPago() {
+      const num = document.getElementById('cc-number').value.replace(/\s+/g, '');
+      if (!/^\d{13,19}$/.test(num)) {
+        alert('El número de tarjeta debe tener entre 13 y 19 dígitos.');
+        return false;
+      }
+      const exp = document.getElementById('cc-exp').value;
+      if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(exp)) {
+        alert('La caducidad debe tener el formato MM/AA.');
+        return false;
+      }
+      const cvc = document.getElementById('cc-cvc').value;
+      if (!/^\d{3,4}$/.test(cvc)) {
+        alert('El CVC/CVV debe tener 3 o 4 dígitos.');
+        return false;
+      }
+      alert('Pago enviado (demostración).');
+      return false; 
+    }
+
+    // Ejercicio 5:
+    function buscarGoogleImages(e) {
+      e.preventDefault();
+      const q = document.getElementById('gi-q').value.trim();
+      const size = document.getElementById('gi-size').value;
+      const color = document.getElementById('gi-color').value;
+      const type = document.getElementById('gi-type').value;
+      const time = document.getElementById('gi-time').value;
+      const license = document.getElementById('gi-license').value;
+
+      const parts = [size, color, type, time, license].filter(Boolean);
+      const tbs = parts.join(',');
+
+      let url = 'https://www.google.com/search?tbm=isch&q=' + encodeURIComponent(q);
+      if (tbs) url += '&tbs=' + encodeURIComponent(tbs);
+
+      window.open(url, '_blank');
+      return false;
+    }
+  </script>
+    </body>
+</html>
