@@ -43,23 +43,14 @@ function renderComponentes() {
           <a class="btn btn-ghost btn-ver" href="#" target="_blank" rel="noopener">Ver producto</a>
           <span class="chip estado">${comp.tienda || '—'}</span>
         </div>
-      </div>
-      <div class="tooltip" role="tooltip">${comp.categoria}: ${comp.nombre}. ${comp.nota}</div>`;
+      </div>`;
     const link = el.querySelector('.btn-ver');
     if (!comp.url || comp.url.startsWith('PEGA_AQUI')) {
       link.setAttribute('aria-disabled', 'true');
-      link.setAttribute('title', 'Añade la URL');
       link.addEventListener('click', e => e.preventDefault());
     } else {
       link.href = comp.url;
     }
-    // Tooltip solo por clic
-    el.addEventListener('click', e => {
-      if (e.target.closest('.btn-ver')) return;
-      const abierto = el.classList.contains('show-tooltip');
-      document.querySelectorAll('.item.show-tooltip').forEach(it => { if (it !== el) it.classList.remove('show-tooltip'); });
-      el.classList.toggle('show-tooltip', !abierto);
-    });
     lista.appendChild(el);
   });
 }
@@ -101,21 +92,88 @@ function avisoTemporal(msg) {
 }
 
 function initCarousel() {
-  const track = document.getElementById('carousel-track'); const slides = Array.from(track.children);
-  let index = 0, scale = 1; const prev = document.querySelector('.carousel .prev'); const next = document.querySelector('.carousel .next');
-  const zoomIn = document.getElementById('zoom-in'); const zoomOut = document.getElementById('zoom-out');
-  const modal = document.getElementById('modal'); const modalImg = document.getElementById('modal-img'); const modalClose = modal.querySelector('.modal-close');
-  const update = () => { track.style.transform = `translateX(${-index * 100}%)`; };
-  const applyScale = () => { const img = slides[index].querySelector('img'); img.style.transform = `scale(${scale})`; };
-  const updateZoomState = () => { const atMin = scale <= 1; const atMax = scale >= 2; zoomOut.disabled = atMin; zoomIn.disabled = atMax; zoomOut.setAttribute('aria-disabled', String(atMin)); zoomIn.setAttribute('aria-disabled', String(atMax)); };
-  prev.addEventListener('click', () => { index = (index - 1 + slides.length) % slides.length; scale = 1; slides.forEach(s => { const i = s.querySelector('img'); i.style.transform = 'scale(1)'; }); update(); applyScale(); updateZoomState(); });
-  next.addEventListener('click', () => { index = (index + 1) % slides.length; scale = 1; slides.forEach(s => { const i = s.querySelector('img'); i.style.transform = 'scale(1)'; }); update(); applyScale(); updateZoomState(); });
-  zoomIn.addEventListener('click', () => { scale = Math.min(2, scale + 0.1); applyScale(); updateZoomState(); });
-  zoomOut.addEventListener('click', () => { scale = Math.max(1, scale - 0.1); applyScale(); updateZoomState(); });
-  slides.forEach(slide => slide.addEventListener('click', () => { const src = slide.querySelector('img').src; modalImg.src = src; modal.setAttribute('aria-hidden', 'false'); modal.showModal ? modal.showModal() : modal.setAttribute('open', ''); }));
-  modalClose.addEventListener('click', () => { modal.setAttribute('aria-hidden', 'true'); modal.close ? modal.close() : modal.removeAttribute('open'); });
+  const imgEl = document.getElementById('gallery-img');
+  const next = document.querySelector('.carousel .next');
+  const prev = document.querySelector('.carousel .prev');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const modalClose = modal.querySelector('.modal-close');
+
+  if (!imgEl || !next || !prev) return;
+
+  const GALERIA_IMAGENES = [
+    'grafica.png', 'procesador.png', 'ram.png', 'Placa.png', 'fuente.png',
+    'monitor.png', 'RazerViperMiniSignatureEdition.png', 'teclado.png',
+    'almacenamiento.png', 'caja.png'
+  ];
+
+  let index = 0;
+  let scale = 1;
+
+  const setSrc = () => {
+    imgEl.src = `images/${GALERIA_IMAGENES[index]}`;
+    imgEl.style.transform = 'scale(1)';
+  };
+
+  const applyScale = () => {
+    imgEl.style.transform = `scale(${scale})`;
+  };
+
+  const updateZoomState = () => {
+    const atMin = scale <= 1;
+    const atMax = scale >= 2;
+    zoomOut.disabled = atMin;
+    zoomIn.disabled = atMax;
+    zoomOut.setAttribute('aria-disabled', String(atMin));
+    zoomIn.setAttribute('aria-disabled', String(atMax));
+  };
+
+  next.addEventListener('click', () => {
+    index = (index + 1) % GALERIA_IMAGENES.length;
+    scale = 1;
+    setSrc();
+    applyScale();
+    updateZoomState();
+  });
+
+  prev.addEventListener('click', () => {
+    index = (index - 1 + GALERIA_IMAGENES.length) % GALERIA_IMAGENES.length;
+    scale = 1;
+    setSrc();
+    applyScale();
+    updateZoomState();
+  });
+
+  zoomIn.addEventListener('click', () => {
+    scale = Math.min(2, scale + 0.1);
+    applyScale();
+    updateZoomState();
+  });
+
+  zoomOut.addEventListener('click', () => {
+    scale = Math.max(1, scale - 0.1);
+    applyScale();
+    updateZoomState();
+  });
+
+  imgEl.addEventListener('click', () => {
+    modalImg.src = imgEl.src;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.showModal ? modal.showModal() : modal.setAttribute('open', '');
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.close ? modal.close() : modal.removeAttribute('open');
+  });
+
   modal.addEventListener('click', e => { if (e.target === modal) modalClose.click(); });
-  applyScale(); updateZoomState();
+
+  setSrc();
+  applyScale();
+  updateZoomState();
 }
 
 function valEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
@@ -137,8 +195,6 @@ function initForm() {
 function init() {
   const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
   renderComponentes();
-  // Cerrar tooltips al hacer clic fuera
-  document.addEventListener('click', e => { if (!e.target.closest('.item')) document.querySelectorAll('.item.show-tooltip').forEach(it => it.classList.remove('show-tooltip')); });
   const toggle = document.getElementById('toggle-monitor'); if (toggle) { toggle.checked = getMonitorToggle(); toggle.addEventListener('change', () => { setMonitorToggle(toggle.checked); actualizarTotal(); }); }
   actualizarTotal();
   const btnCopiar = document.getElementById('btn-copiar'); if (btnCopiar) btnCopiar.addEventListener('click', copiarListado);

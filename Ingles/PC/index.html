@@ -53,11 +53,11 @@
     <nav class="container" aria-label="Principal">
       <a href="#" class="logo" aria-label="Inicio">PC Alto Rendimiento</a>
       <ul class="nav">
-        <li><a href="#componentes">Componentes</a></li>
-        <li><a href="#rendimiento">Rendimiento</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a></li>
+        <li><a href="#componentes" class="link">Componentes</a></li>
+        <li><a href="#rendimiento" class="link">Rendimiento</a></li>
+        <li><a href="#galeria" class="link">Galería</a></li>
+        <li><a href="#faq" class="link">FAQ</a></li>
+        <li><a href="#contacto" class="btn-primary">Solicitar presupuesto</a></li>
       </ul>
     </nav>
   </header>
@@ -71,8 +71,8 @@
           <p class="subtitle">Ryzen 7 7800X3D + RTX 4070 · DDR5 32 GB · Monitor 360 Hz</p>
           <p class="tagline">Potencia competitiva hecha a medida. Ryzen 7 7800X3D y RTX 4070 para jugar, crear y competir al máximo nivel.</p>
           <div class="cta">
-            <a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a>
-            <a href="#componentes" class="btn btn-ghost">Ver componentes</a>
+            <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
+            <a href="#componentes" class="btn-ghost">Ver componentes</a>
           </div>
           <ul class="badges" aria-label="Beneficios clave">
             <li class="chip">FPS de élite</li>
@@ -122,9 +122,9 @@
         <div class="section-head">
           <h2 id="componentes-title">Componentes</h2>
           <div class="actions">
-            <button id="btn-copiar" class="btn btn-secondary" aria-describedby="copiar-hint">Copiar listado</button>
+            <button id="btn-copiar" class="btn-secondary" aria-describedby="copiar-hint">Copiar listado</button>
             <span id="copiar-hint" class="visually-hidden">Copia nombres, precios y enlaces al portapapeles.</span>
-            <button id="btn-csv" class="btn btn-secondary">Descargar CSV</button>
+            <button id="btn-csv" class="btn-secondary">Descargar CSV</button>
           </div>
         </div>
         <div class="grid cards" id="lista-componentes" role="list"></div>
@@ -176,45 +176,16 @@
     <section id="galeria" class="galeria" aria-labelledby="galeria-title">
       <div class="container">
         <h2 id="galeria-title">Galería</h2>
-        <div class="carousel" role="listbox" aria-label="Imágenes del equipo">
-          <button class="carousel-btn prev" aria-label="Anterior" data-dir="-1">◀</button>
-          <div class="track" id="carousel-track">
-            <figure class="slide current" tabindex="0">
-              <img src="images/grafica.png" alt="Vista de la tarjeta gráfica" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/procesador.png" alt="Detalle del procesador" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/ram.png" alt="Módulos de memoria RAM" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/Placa.png" alt="Placa base" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/fuente.png" alt="Fuente de alimentación" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/monitor.png" alt="Monitor" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/RazerViperMiniSignatureEdition.png" alt="Ratón" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/teclado.png" alt="Teclado" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/almacenamiento.png" alt="Almacenamiento" loading="lazy" decoding="async">
-            </figure>
-            <figure class="slide" tabindex="0">
-              <img src="images/caja.png" alt="Caja" loading="lazy" decoding="async">
-            </figure>
-          </div>
-          <button class="carousel-btn next" aria-label="Siguiente" data-dir="1">▶</button>
+        <div class="carousel" role="region" aria-label="Imagen del equipo">
+          <button class="carousel-btn prev" aria-label="Imagen anterior">◀</button>
+          <figure class="slide current" tabindex="0">
+            <img id="gallery-img" src="images/grafica.png" alt="Vista del equipo" loading="lazy" decoding="async">
+          </figure>
+          <button class="carousel-btn next" aria-label="Siguiente imagen">▶</button>
         </div>
         <div class="zoom-controls">
-          <button id="zoom-in" class="btn btn-secondary" aria-label="Acercar">Zoom +</button>
-          <button id="zoom-out" class="btn btn-secondary" aria-label="Alejar">Zoom −</button>
+          <button id="zoom-in" class="btn-secondary" aria-label="Acercar">Zoom +</button>
+          <button id="zoom-out" class="btn-secondary" aria-label="Alejar">Zoom −</button>
         </div>
         <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
           <div class="modal-content">
@@ -263,8 +234,8 @@
         <h2 id="precio-title">Precio y solicitud</h2>
         <p id="resumen-total" class="resumen-total">Total estimado: 2.049,66 €</p>
         <div class="cta">
-          <a href="#contacto" class="btn btn-primary">Solicitar presupuesto</a>
-          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://wa.me/XXXXXXXXX">Contactar por WhatsApp</a>
+          <a href="#contacto" class="btn-primary">Solicitar presupuesto</a>
+          <a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/XXXXXXXXX">Contactar por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -297,8 +268,8 @@
             </div>
           </div>
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Enviar</button>
-            <p class="privacidad">Al enviar, aceptas el <a href="#" target="_blank" rel="noopener">aviso de privacidad</a>.</p>
+            <button class="btn-primary" type="submit">Enviar</button>
+        <p class="privacidad">Al enviar, aceptas el <a href="#" target="_blank" rel="noopener" class="link">aviso de privacidad</a>.</p>
           </div>
           <p class="success" id="form-success" role="status" aria-live="polite" hidden>¡Gracias! Hemos recibido tu mensaje y te contactaremos.</p>
         </form>
@@ -316,22 +287,22 @@
       </div>
       <nav aria-label="Legal">
         <ul>
-          <li><a href="#">Aviso legal</a></li>
-          <li><a href="#">Privacidad</a></li>
-          <li><a href="#">Cookies</a></li>
+          <li><a href="#" class="link">Aviso legal</a></li>
+          <li><a href="#" class="link">Privacidad</a></li>
+          <li><a href="#" class="link">Cookies</a></li>
         </ul>
       </nav>
       <nav aria-label="Redes sociales">
         <ul class="social">
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          <li><a href="#" aria-label="Twitter/X">Twitter</a></li>
-          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+          <li><a href="#" aria-label="Instagram" class="link">Instagram</a></li>
+          <li><a href="#" aria-label="Twitter/X" class="link">Twitter</a></li>
+          <li><a href="#" aria-label="YouTube" class="link">YouTube</a></li>
         </ul>
       </nav>
     </div>
     <p class="copyright">© <span id="year"></span> PC Alto Rendimiento</p>
   </footer>
 
-  <script src="app.js" defer></script>
+<script src="app.js?v=4" defer></script>
 </body>
 </html>
