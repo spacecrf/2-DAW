@@ -6,7 +6,7 @@ const COMPONENTES = [
   { n: 4, categoria: "Tarjeta gráfica", nombre: "Gigabyte GeForce RTX 4070 Windforce OC 12 GB", precio: 509.50, moneda: "EUR", tienda: "", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "DLSS 3, gran rendimiento 1080p/1440p alto refresco." },
   { n: 5, categoria: "Fuente de alimentación", nombre: "MSI MAG A850GL PCIE5 850 W", precio: 106.90, moneda: "EUR", tienda: "", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "80+ Gold, conector 12VHPWR." },
   { n: 6, categoria: "Monitor", nombre: "BenQ ZOWIE XL2566K", precio: 782.60, moneda: "EUR", tienda: "", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "24.5'', TN, 360 Hz, orientado a eSports. Precio estimado." },
-  { n: 7, categoria: "Teclado", nombre: "Razer Viper Mini Signature Edition", precio: 89.99, moneda: "EUR", tienda: "Amazon", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "Ratón gaming ultraligero, sensor óptico de 8500 DPI." },
+  { n: 7, categoria: "Ratón", nombre: "Razer Viper Mini Signature Edition", precio: 89.99, moneda: "EUR", tienda: "Amazon", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "Ratón gaming ultraligero, sensor óptico de 8500 DPI." },
   { n: 8, categoria: "Almacenamiento", nombre: "Samsung 980 PRO 1TB NVMe SSD", precio: 89.90, moneda: "EUR", tienda: "PcComponentes", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "PCIe 4.0, velocidades hasta 7000 MB/s lectura." },
   { n: 9, categoria: "Caja", nombre: "Fractal Design Core 1000", precio: 45.99, moneda: "EUR", tienda: "Amazon", url: "PEGA_AQUI_URL_DEL_PRODUCTO", nota: "Micro ATX, compacta, excelente flujo de aire." }
 ];
@@ -22,9 +22,10 @@ const IMAGENES = {
   'Tarjeta gráfica': 'grafica.png',
   'Fuente de alimentación': 'fuente.png',
   'Monitor': 'monitor.png',
-  'Teclado': 'RazerViperMiniSignatureEdition.png',
-  'Almacenamiento': 'procesador.png',
-  'Caja': 'Placa.png'
+  'Teclado': 'teclado.png',
+  'Ratón': 'RazerViperMiniSignatureEdition.png',
+  'Almacenamiento': 'almacenamiento.png',
+  'Caja': 'caja.png'
 };
 
 function renderComponentes() {
@@ -52,6 +53,13 @@ function renderComponentes() {
     } else {
       link.href = comp.url;
     }
+    // Tooltip solo por clic
+    el.addEventListener('click', e => {
+      if (e.target.closest('.btn-ver')) return;
+      const abierto = el.classList.contains('show-tooltip');
+      document.querySelectorAll('.item.show-tooltip').forEach(it => { if (it !== el) it.classList.remove('show-tooltip'); });
+      el.classList.toggle('show-tooltip', !abierto);
+    });
     lista.appendChild(el);
   });
 }
@@ -97,14 +105,17 @@ function initCarousel() {
   let index = 0, scale = 1; const prev = document.querySelector('.carousel .prev'); const next = document.querySelector('.carousel .next');
   const zoomIn = document.getElementById('zoom-in'); const zoomOut = document.getElementById('zoom-out');
   const modal = document.getElementById('modal'); const modalImg = document.getElementById('modal-img'); const modalClose = modal.querySelector('.modal-close');
-  const update = () => track.style.transform = `translateX(${-index * 100}%)`;
-  prev.addEventListener('click', () => { index = (index - 1 + slides.length) % slides.length; update(); });
-  next.addEventListener('click', () => { index = (index + 1) % slides.length; update(); });
-  zoomIn.addEventListener('click', () => { scale = Math.min(2, scale + 0.1); slides[index].querySelector('img').style.transform = `scale(${scale})`; });
-  zoomOut.addEventListener('click', () => { scale = Math.max(1, scale - 0.1); slides[index].querySelector('img').style.transform = `scale(${scale})`; });
+  const update = () => { track.style.transform = `translateX(${-index * 100}%)`; };
+  const applyScale = () => { const img = slides[index].querySelector('img'); img.style.transform = `scale(${scale})`; };
+  const updateZoomState = () => { const atMin = scale <= 1; const atMax = scale >= 2; zoomOut.disabled = atMin; zoomIn.disabled = atMax; zoomOut.setAttribute('aria-disabled', String(atMin)); zoomIn.setAttribute('aria-disabled', String(atMax)); };
+  prev.addEventListener('click', () => { index = (index - 1 + slides.length) % slides.length; scale = 1; slides.forEach(s => { const i = s.querySelector('img'); i.style.transform = 'scale(1)'; }); update(); applyScale(); updateZoomState(); });
+  next.addEventListener('click', () => { index = (index + 1) % slides.length; scale = 1; slides.forEach(s => { const i = s.querySelector('img'); i.style.transform = 'scale(1)'; }); update(); applyScale(); updateZoomState(); });
+  zoomIn.addEventListener('click', () => { scale = Math.min(2, scale + 0.1); applyScale(); updateZoomState(); });
+  zoomOut.addEventListener('click', () => { scale = Math.max(1, scale - 0.1); applyScale(); updateZoomState(); });
   slides.forEach(slide => slide.addEventListener('click', () => { const src = slide.querySelector('img').src; modalImg.src = src; modal.setAttribute('aria-hidden', 'false'); modal.showModal ? modal.showModal() : modal.setAttribute('open', ''); }));
   modalClose.addEventListener('click', () => { modal.setAttribute('aria-hidden', 'true'); modal.close ? modal.close() : modal.removeAttribute('open'); });
   modal.addEventListener('click', e => { if (e.target === modal) modalClose.click(); });
+  applyScale(); updateZoomState();
 }
 
 function valEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
@@ -126,6 +137,8 @@ function initForm() {
 function init() {
   const yearEl = document.getElementById('year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
   renderComponentes();
+  // Cerrar tooltips al hacer clic fuera
+  document.addEventListener('click', e => { if (!e.target.closest('.item')) document.querySelectorAll('.item.show-tooltip').forEach(it => it.classList.remove('show-tooltip')); });
   const toggle = document.getElementById('toggle-monitor'); if (toggle) { toggle.checked = getMonitorToggle(); toggle.addEventListener('change', () => { setMonitorToggle(toggle.checked); actualizarTotal(); }); }
   actualizarTotal();
   const btnCopiar = document.getElementById('btn-copiar'); if (btnCopiar) btnCopiar.addEventListener('click', copiarListado);
