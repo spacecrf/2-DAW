@@ -219,10 +219,8 @@ img {
 }
 
 .carousel .slide img {
-    width: 100%;
-    height: 100%;
+    height:80%;
     object-fit: contain;
-    /* Cambiado de cover a contain para mostrar la imagen completa */
     transition: transform .3s ease;
     max-width: 100%;
     max-height: 100%;
@@ -305,6 +303,22 @@ img {
 .zoom-in {
     animation: zoomIn 0.5s ease-out;
 }
+
+#zoom-in, #zoom-out {
+    padding: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+#zoom-in:hover, #zoom-out:hover {
+    background: rgba(0, 224, 255, .8);
+    border-color: rgba(0, 224, 255, 1);
+    transform: translateY(-5%) scale(1.01);
+    box-shadow: 0 4px 20px rgba(0, 224, 255, .4);
+}
+
 
 .zoom-out {
     animation: zoomOut 0.5s ease-out;
