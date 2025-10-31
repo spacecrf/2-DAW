@@ -1,0 +1,47 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #999;
+      padding: 15px;
+      text-align: justify;
+    }
+
+    .card img {
+      display: block;
+      margin: 0 auto 10px;
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+    }
+.card:nth-child(7) {
+  width: 90vw;
+}
+    .card.last {
+      grid-column: 1 / 4;
+      justify-self: center;
+      width: 60%;
+    }

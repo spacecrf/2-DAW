@@ -1,0 +1,42 @@
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-areas:
+    'arriba arriba arriba'
+    'izquierda medio derecha'
+    'abajo abajo abajo';
+}
+.arriba {
+  grid-area: arriba;
+  background: green;
+  text-align: center;
+  line-height: 50px;
+}
+.abajo {
+  grid-area: abajo;
+  background: green;
+  text-align: center;
+  line-height: 50px;
+}
+.izquierda {
+  grid-area: izquierda;
+  background: red;
+  text-align: center;
+  line-height: calc(100vh - 100px);
+}
+.derecha {
+  grid-area: derecha;
+  background: red;
+  text-align: center;
+  line-height: calc(100vh - 100px);
+}
+.medio {
+  grid-area: medio;
+  background: yellow;
+  text-align: center;
+  line-height: calc(100vh - 100px);
+}

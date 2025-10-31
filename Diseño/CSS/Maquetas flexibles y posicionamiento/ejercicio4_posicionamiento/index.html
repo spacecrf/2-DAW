@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo de Posicionamiento CSS</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    margin-top: 30px;
+  }
+
+  .primera {
+    background-color: purple;
+    color: white;
+    width: 400px;
+    padding: 5px;
+  }
+
+  .segunda {
+    position: absolute;
+    top: 30px;
+    left: 400px;
+    background-color: teal;
+    color: white;
+    width: 400px;
+    padding: 5px;
+  }
+
+  .tercera {
+    position: relative;
+    top: 20px;
+    left: 50px;
+    background-color: darkgreen;
+    color: white;
+    width: 400px;
+    padding: 5px;
+  }
+
+  .cuarta {
+    position: static;
+    background-color: lightgreen;
+    color: black;
+    width: 400px;
+    padding: 5px;
+  }
+
+  .quinta {
+    position: relative;
+    background-color: #666;
+    color: white;
+    width: 900px;
+    height: 100px;
+    margin-top: 40px;
+  }
+
+  .sexta {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    background-color: black;
+    color: yellow;
+    padding: 10px;
+    width: 300px;
+  }
+
+  .septima {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    width: 300px;
+    background-color: darkcyan;
+    color: white;
+    padding: 5px;
+    overflow: auto;
+    height: 100px;
+  }
+
+  .sticky-text {
+    background-color: #e3f5fd;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+  }
+
+  .sticky-box {
+    background-color: #e3f5fd;
+    padding: 10px;
+    position: sticky;
+    top: 40px;
+  }
+
+  .contenido {
+    margin-top: 30px;
+    line-height: 2em;
+  }
+
+</style>
+</head>
+<body>
+
+  <h2>NO define posición</h2>
+
+  <div class="primera">PRIMERA: No define posición, por lo que es <b>STATIC</b></div>
+
+  <div class="segunda">SEGUNDA: Capa Absoluta (sólo tiene como contenedor a "body") por lo tanto es relativa a <b>body</b></div>
+
+  <div class="tercera">
+    TERCERA: Capa de posicionamiento relativo.<br>
+    Se coloca teniendo en cuenta las propiedades a partir de la posición que le tocaría en el flujo HTML.<br>
+    No afecta al resto de capas adyacentes
+  </div>
+
+  <div class="cuarta">CUARTA: Se ignoran los valores de desplazamiento.</div>
+
+  <h3>pruebo en alguno de los div la propiedad overflow</h3>
+
+  <h2>NO define posición</h2>
+  <h2>NO define posición</h2>
+
+  <div class="quinta">
+    QUINTA: Capa absoluta, se referencia según a su contenedor porque no es un static
+    <div class="sexta">
+      SEXTA: Dentro de quinta. Absoluta, se referencia dentro de su contenedor porque éste no es un static
+    </div>
+  </div>
+
+  <div class="septima">
+    SEPTIMA: Esta capa no se mueve al desplazar la ventana<br>
+    SEPTIMA: Esta capa permanece fija al hacer scroll
+  </div>
+
+  <p class="sticky-text">P STICKY</p>
+
+  <div class="contenido">
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+  </div>
+
+  <div class="sticky-box">CAJA STICKY</div>
+
+  <div class="contenido">
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+    <p>Texto</p>
+  </div>
+
+</body>
+</html>
