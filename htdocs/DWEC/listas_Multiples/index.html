@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Selecion multiple</title>
+</head>
+<body>
+    <form>
+        <label for="frutas">Selecciona tus frutsa favoritas:</label>
+        <select name="frutas" id="frutas" multiple>
+            <option value="manzana">Manzana</option>
+            <option value="banana">Banana</option>
+            <option value="naranja">Naranja</option>
+            <option value="uva">Uva</option>
+            <option value="mango">Mango</option>
+        </select>
+        <input type="button" onclick="mostrarSeleccion()" value="Mostrar Seleccion">
+    </form>
+    <p id="resultado"></p>
+</body>
+<script src="utiles.js"></script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Fake Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body onload="cargarCategorias(); cargarArticulos();">
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Web Fake Store</h1>
+
+        <!-- Selección de categoría -->
+    <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <div>
+                <h5 class="mb-1">Categoría:</h5>
+                <div id="categorias"></div>
+            </div>
+            <div>
+                <h5 class="mb-1">Ordenar:</h5>
+                <select id="orden" class="form-select w-auto" onchange="actualizarOrden()">
+                    <option value="asc">Ascendente</option>
+                    <option value="desc">Descendente</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Contenedor de productos -->
+        <div id="tablaArticulos" class="row g-3 justify-content-center">
+            <!-- Aquí se insertan las tarjetas dinámicamente -->
+        </div>
+    </div>
+
+    <script src="utiles.js"></script>
+</body>
+
+</html>
+
+<!--
+<div class="card text-bg-dark border-0 rounded-0 shadow-lg position-relative overflow-hidden">
+  <img src="banner.jpg" class="card-img" alt="Fake Web" 
+       style="height: 320px; object-fit: cover; filter: brightness(60%);">
+  
+  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center text-light px-4">
+    <h1 class="card-title fw-bold display-4 mb-3 text-uppercase" style="letter-spacing: 2px;">
+      Web Fake Store
+    </h1>
+    <p class="card-text fs-5 mb-2">
+      Compra inteligente. Explora productos falsos... <br> 
+      Pero con estilo <span class="text-warning">real </span>
+    </p>
+    <p class="card-text">
+      <small class="text-secondary">Actualizado automáticamente desde <strong>FakeStoreAPI</strong></small>
+    </p>
+  </div>
+
+        //degradado
+  <div class="position-absolute bottom-0 start-0 w-100" 
+       style="height: 100px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+  </div>
+</div>
+-->
+

@@ -56,3 +56,4 @@ function MuestraCoches($lista){
 
 MuestraCoches($coche1);
 MuestraCoches($lista);
+?>

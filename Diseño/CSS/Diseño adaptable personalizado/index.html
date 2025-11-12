@@ -1,0 +1,186 @@
+
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Percusión — Ritmo y Caja</title>
+  <meta name="description" content="Web educativa y de presentación sobre instrumentos de percusión. Diseño adaptable (responsive) y explicaciones de CSS aplicadas." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Ritmo &amp; Caja</h1>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#instrumentos">Instrumentos</a></li>
+          <li><a href="#tecnicas">Técnicas</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto" class="cta">Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-controls="menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Descubre la energía de la percusión</h2>
+          <p class="lead">Instrumentos, técnicas y recursos para estudiantes y amantes del ritmo. Diseño responsivo usando HTML5 y CSS moderno.</p>
+          <p><a class="btn" href="#instrumentos">Empezar</a></p>
+        </div>
+        <div class="hero-media" aria-hidden="true">
+          
+          <img src="imgs/bateria.jpg" alt="Batería acústica" style="width:100%; border-radius:var(--radius); height:auto;">
+        </div>
+      </div>
+    </section>
+
+    <section id="instrumentos" class="container instruments">
+      <h3>Instrumentos principales</h3>
+      <p class="intro">Breve descripción de los grupos instrumentales de percusión.</p>
+      <ul class="grid-list">
+        <li class="card">
+          <h4>Batería</h4>
+          <p>Kit completo para estilos modernos: caja, bombo, platos y toms.</p>
+        </li>
+        <li class="card">
+          <h4>Congas</h4>
+          <p>Tambores afrocaribeños con tono melódico.</p>
+        </li>
+        <li class="card">
+          <h4>Djembé</h4>
+          <p>Tambores africanos de mano, muy dinámicos.</p>
+        </li>
+        <li class="card">
+          <h4>Instrumentos menores</h4>
+          <p>Triángulo, tamborín, claves, shakers, cajón...</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="tecnicas" class="techniques">
+      <div class="container">
+        <h3>Técnicas y conceptos</h3>
+        <ol class="tech-list">
+          <li><strong>Rudimentos:</strong> paradiddle, flam, roll.</li>
+          <li><strong>Time keeping:</strong> mantener el pulso y subdivisiones.</li>
+          <li><strong>Dinámica:</strong> control del volumen y acentos.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="galeria" class="container gallery">
+      <h3>Galería</h3>
+      <p class="note">Ejemplo de uso de flotantes y clearfix; sustituir imágenes reales.</p>
+
+      
+      <div class="float-row">
+        <figure class="float-item">
+          <img src="imgs/congas.webp" alt="Congas" style="width:100%; height:auto; border-radius:.4rem;">
+          <figcaption>Congas</figcaption>
+        </figure>
+        <figure class="float-item">
+          <img src="imgs/Djembé.jpg" alt="Djembé" style="width:100%; height:auto; border-radius:.4rem;">
+          <figcaption>Djembé</figcaption>   
+        </figure>
+        <figure class="float-item">
+          <img src="imgs/CajónPeruano.jpg" alt="Cajón peruano" style="width:100%; height:auto; border-radius:.4rem;">
+          <figcaption>Cajón Peruano</figcaption>
+        </figure>
+        <div class="clearfix"></div>
+      </div>
+
+    </section>
+
+    <section id="contacto" class="container contact">
+      <h3>Contacto</h3>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" required placeholder="Tu nombre"> 
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required placeholder="nombre@ejemplo.com">
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..."></textarea>
+
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="memoria" class="container memoria">
+      <h3>Memoria técnica — CSS aplicado por apartados</h3>
+      <p>En esta memoria se describe, de forma concisa, qué reglas CSS se aplican a cada bloque de la página y qué conceptos del temario se han utilizado.</p>
+
+      <h4>Global y tipografía</h4>
+      <ul>
+        <li>box-sizing: border-box se aplica globalmente a todos los elementos para facilitar el modelo de cajas.</li>
+        <li>Unidades empleadas: rem (para fuentes y espacios), %, vw para medidas relativas y px cuando es necesario; ejemplo: <code>font-size: 1.125rem;</code>.</li>
+        <li>Pseudo-clases usadas: <code>:hover</code> en enlaces y botones; <code>:focus</code> en campos del formulario; pseudo-elementos <code>::before</code> para decorar encabezados.</li>
+      </ul>
+
+      <h4>Header y menú</h4>
+      <ul>
+        <li>Menú horizontal tradicional implementado con una lista inline que se adapta mediante flexbox en pantallas grandes y con un botón que muestra/oculta (small) usando media queries.</li>
+        <li>Posicionamiento: <code>position: sticky</code> en la cabecera para mantener el menú visible al hacer scroll.</li>
+      </ul>
+
+      <h4>Hero</h4>
+      <ul>
+        <li>Diseño en dos columnas con grid (hero-grid). La imagen es un placeholder con altura en <code>vh</code> para responsividad.</li>
+        <li>Overflow controlado: el contenedor usa <code>overflow: hidden</code> para evitar solapamientos con elementos posicionados.</li>
+      </ul>
+
+      <h4>Instrumentos (cards)</h4>
+      <ul>
+        <li>Uso de <code>display: grid</code> en <code>.grid-list</code> con <code>grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))</code> para adaptabilidad.</li>
+        <li>Boxes y sombras, padding y margin aplicados con rem para mantener escalado coherente.</li>
+      </ul>
+
+      <h4>Galería — flotantes y clearfix</h4>
+      <ul>
+        <li>Se muestra un ejemplo deliberado con float: <code>.float-item { float: left; width: 30%; margin-right: 2%; }</code> para ilustrar problemas típicos (colapso del contenedor).</li>
+        <li>Solución con <code>.clearfix::after</code> (pseudo-elemento) y/o <code>overflow: auto</code> en el contenedor. En este proyecto se incluye la clase <code>.clearfix</code>.</li>
+      </ul>
+
+      <h4>Formularios</h4>
+      <ul>
+        <li>Estados con pseudo-clases: <code>input:focus</code> y <code>button:hover</code> para accesibilidad visual.</li>
+        <li>Se verifican <code>required</code> desde HTML y estilos que mejoran usabilidad.</li>
+      </ul>
+
+      <h4>Responsividad</h4>
+      <ul>
+        <li>Media queries en puntos clave: 900px y 600px para reorganizar nav, grid y hero.</li>
+        <li>Uso de unidades relativas como % y rem para que la interfaz escale.</li>
+      </ul>
+
+      <h4>Problemas previstos y soluciones</h4>
+      <ul>
+        <li>Problema espacio entre inline-block: resuelto usando flexbox y eliminando espacios en el HTML donde se emplea inline-block, o usando comentarios HTML si se usa inline-block.</li>
+        <li>Problemas con flotantes: uso de clearfix y alternativas modernas (grid/flex) recomendadas.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year">2025</span> Ritmo &amp; Caja — Proyecto de práctica HTML5/CSS.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="cargar();">
+
+    <h1>Recetas-Web</h1>
+
+
+    <div class="filters">
+        <input type="text" id="buscar" placeholder="Buscar por nombre o ingrediente">
+        <button onclick="buscarNombre()">Buscar</button>
+    </div>
+
+    <div class="filters">
+        <select id="fDifficulty">
+            <option value="">Dificultad</option>
+        </select>
+        <select id="fCuisine">
+            <option value="">Cocina</option>
+        </select>
+        <select id="fMeal">
+            <option value="">Tipo de comida</option>
+        </select>
+        <input type="number" id="fTiempo" placeholder="Tiempo máximo total">
+        <button onclick="filtrar()">Filtrar</button>
+    </div>
+
+    <div id="recetas" class="grid"></div>
+
+    <div id="detalle">
+        <div id="detalleBox">
+            <button id="btnCerrar" onclick="cerrarDetalle()">X</button>
+            <div id="detalleContenido"></div>
+        </div>
+    </div>
+
+    <script src="utiles.js"></script>
+</body>
+
+</html>

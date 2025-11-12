@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <div class="card">
+      <div>
+        <div id="status" class="status"></div>
+        <div>
+          <label for="filtro">Filtrar por prioridad</label>
+          <select id="filtro">
+            <option value="Todas">Todas</option>
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Baja">Baja</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <form id="form-tarea" autocomplete="off">
+        <div>
+          <div>
+            <label for="nombre">Nombre de la tarea</label>
+            <input id="nombre" type="text" placeholder="" />
+          </div>
+          <div>
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad">
+              <option>Alta</option>
+              <option>Media</option>
+              <option>Baja</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit">Añadir tarea</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <h2 >Lista</h2>
+        <ul id="lista"></ul>
+      </div>
+
+      <div class="card">
+        <h2 >Tabla</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Tarea</th>
+              <th>Prioridad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<script src="utiles.js"></script>
+</body>
+</html>

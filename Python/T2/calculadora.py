@@ -3,13 +3,7 @@
 #     sumar(a, b) → devuelve la suma.
 #     restar(a, b) → devuelve la resta.
 #     multiplicar(a, b) → devuelve la multiplicación.
-#     dividir(a, b) → devuelve la división (controlando la división por cero).
-
-# El programa principal debe:
-
-#     Pedir dos números al usuario.
-#     Llamar a cada función y mostrar los resultados.
-#     Incluir un docstring explicativo en cada función.
+#     dividir(a, b) → devuelve la división 
 
 
 def sumar(a, b):
