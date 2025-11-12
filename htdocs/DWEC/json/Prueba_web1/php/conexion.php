@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$usuario = "manuelgarica";
+$usuario = "manuelgarcia";
 $contraseña = "7GyOyo6tx_Bs#nz2";
 $base_datos = "manuelgarcia";
 
