@@ -1,0 +1,268 @@
+/* ----------- */
+/*   GENERALES */
+/* ----------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div, section {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilo base para todos los ejercicios */
+[class^="act"] div {
+  display: flex;
+  border: 1px solid;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 1 */
+/* ----------- */
+.act1 {
+  background: linear-gradient(to right, #122838, #4698d4);
+}
+.act1 > div {
+  flex: 1;
+  width: 13vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 2 */
+/* ----------- */
+.act2 {
+  background: linear-gradient(to right, #4698d4, #122838);
+  flex-direction: row-reverse;
+}
+.act2 > div {
+  flex: 1;
+  width: 13vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 3 */
+/* ----------- */
+.act3 {
+  background: linear-gradient(to top, #4698d4, #122838);
+  flex-direction: column;
+  width: 13vw;
+}
+.act3 div {
+  width: 13vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 4 */
+/* ----------- */
+.act4 {
+  background: linear-gradient(to top, #122838, #4698d4);
+  flex-direction: column-reverse;
+  width: 13vw;
+}
+.act4 div {
+  width: 13vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 5 */
+/* ----------- */
+.act5 {
+  flex-wrap: wrap-reverse;
+}
+.act5 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 6 */
+/* ----------- */
+.act6 {
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+}
+.act6 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 7 */
+/* ----------- */
+.act7 {
+  flex-wrap: wrap;
+}
+.act7 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 8 */
+/* ----------- */
+.act8 {
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+.act8 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 9 */
+/* ----------- */
+.act9 {
+  flex-flow: wrap row-reverse;
+  justify-content: start;
+}
+.act9 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 10 */
+/* ----------- */
+.act10 {
+  flex-flow: wrap;
+  justify-content: center;
+}
+.act10 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 11 */
+/* ----------- */
+.act11 {
+  flex-flow: wrap;
+  justify-content: space-between;
+}
+.act11 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 12 */
+/* ----------- */
+.act12 {
+  flex-flow: wrap;
+}
+.act12 div {
+  width: 20vw;
+  height: 30vh;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 13 */
+/* ----------- */
+.act13 {
+  flex-flow: wrap;
+  align-content: space-between;
+  height: 60vh;
+}
+.act13 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 14 */
+/* ----------- */
+.act14 {
+  flex-flow: wrap;
+  align-content: space-around;
+  height: 60vh;
+}
+.act14 div {
+  width: 20vw;
+}
+
+/* ----------- */
+/*   ACTIVIDAD 15 */
+/* ----------- */
+.act15 {
+  flex-flow: wrap;
+  align-content: space-around;
+  align-items: baseline;
+  height: 60vh;
+}
+.act15 div {
+  width: 20vw;
+}
+.act15 div:nth-child(1) {background: #122838; height: 20vh;}
+.act15 div:nth-child(2) {background: #183449; height: 15vh;}
+.act15 div:nth-child(3) {background: #204662; height: 10vh;}
+.act15 div:nth-child(4) {background: #2a5b7f; height: 15vh;}
+.act15 div:nth-child(5) {background: #34719e; height: 15vh;}
+.act15 div:nth-child(6) {background: #3e86bb; height: 20vh;}
+.act15 div:nth-child(7) {background: #4698d4; height: 15vh;}
+
+/* ----------- */
+/*   ACTIVIDAD 16 */
+/* ----------- */
+.act16 {
+  flex-flow: wrap;
+  align-content: center;
+}
+.act16 div {
+  width: 20vw;
+}
+.act16 div:nth-child(1){background:#122838;}
+.act16 div:nth-child(2){background:#183449;}
+.act16 div:nth-child(3){background:#204662;}
+.act16 div:nth-child(4){background:#2a5b7f;}
+.act16 div:nth-child(5){background:#34719e;}
+.act16 div:nth-child(6){background:#3e86bb;}
+.act16 div:nth-child(7){background:#4698d4;}
+
+/* ----------- */
+/*   ACTIVIDAD 17 */
+/* ----------- */
+.act17 {
+  flex-flow: wrap;
+  height: 300px;
+  align-content: space-between;
+}
+.act17 div {
+  width: 21vw;
+}
+.act17 div:nth-child(1){background:#122838;}
+.act17 div:nth-child(2){background:#183449;}
+.act17 div:nth-child(3){background:#204662;}
+.act17 div:nth-child(4){background:#2a5b7f;}
+.act17 div:nth-child(5){background:#34719e;}
+.act17 div:nth-child(6){background:#3e86bb;}
+.act17 div:nth-child(7){background:#4698d4;}
+
+/* ----------- */
+/*   ACTIVIDAD 18 */
+/* ----------- */
+.act18 div {
+  width: 14vw;
+}
+.act18 div:nth-child(1){background:#122838;order:1;}
+.act18 div:nth-child(2){background:#183449;order:5;}
+.act18 div:nth-child(3){background:#204662;order:2;}
+.act18 div:nth-child(4){background:#2a5b7f;order:6;}
+.act18 div:nth-child(5){background:#34719e;order:3;}
+.act18 div:nth-child(6){background:#3e86bb;order:7;}
+.act18 div:nth-child(7){background:#4698d4;order:4;}
+
+/* ----------- */
+/*   ACTIVIDAD 19 */
+/* ----------- */
+.act19 div {
+  width: 14vw;
+}
+.act19 div:nth-child(1){background:#122838;}
+.act19 div:nth-child(2){background:#183449;}
+.act19 div:nth-child(3){background:#204662;}
+.act19 div:nth-child(4){background:#2a5b7f;width:28vw;}
+.act19 div:nth-child(5){background:#34719e;}
+.act19 div:nth-child(6){background:#3e86bb;}
+.act19 div:nth-child(7){background:#4698d4;}
