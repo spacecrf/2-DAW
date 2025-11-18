@@ -1,0 +1,22 @@
+*{
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+.conteiner{
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row wrap;
+}
+.colum1,
+.colum2,
+.colum3{width: 100%;}
+
+@media (min-width: 600px) {
+    .colum1{order: 2; width: 60%;}
+    .colum2{order:1; width: 40%;}
+    .colum3{order: 3;}
+}
+@media (min-width: 800px) {
+    .colum2,
+    .colum3{width: 20%;}
+}

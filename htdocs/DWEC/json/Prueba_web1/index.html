@@ -19,35 +19,25 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Apellidos</th>
-                    <th>Notas</th>
+                    <th>Nota</th>
+                    <th>Eliminar</th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
         <br><br>
-        <button onclick="cargaLista()">+</button>
+        <button onclick="cargalista();">Carga Lista</button><br>
         Lista alumnos:
         <ul id="lista-alumnos">
 
         </ul>
-        <br><br>
-        <!--Formulario-->
-        <form action="php/insertaralumno.php" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-
-            <label for="apellidos">Apellidos:</label>
-            <input type="text" id="apellido" name="apellido" required><br><br>
-
-            <label for="notas">Notas:</label>
-            <input type="text" id="notas" name="notas" required><br><br>
-
-            <button onclick="dardeAlta()">Insertar Alumno</button>
-        </form>
+        <hr>
+        Nombre: <input type="text" id="nombre"><br>
+        Apellidos: <input type="text" id="apellido"><br>
+        Nota: <input type="text" id="notas"><br>
+        <button onclick="altaalumno();">Alta alumno</button>
     </div>
-
-
-
 </body>
 
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas - Hotel Los Tamarindos</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">Los Tamarindos</div>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="rooms.html">Habitaciones</a></li>
+        <li><a href="about.html">Sobre Nosotros</a></li>
+        <li><a href="booking.html" class="active">Reservas</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="pages/login.html">Acceder</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <h1>Reservas</h1>
+    <p>Selecciona tus fechas y planifica tu estancia perfecta.</p>
+  </section>
+
+  <section class="booking">
+    <div class="booking-container">
+      <form id="booking-form">
+        <label for="room">Tipo de habitación:</label>
+        <select id="room" required>
+          <option value="">Selecciona una opción</option>
+          <option value="standard">Habitación Standard</option>
+          <option value="deluxe">Habitación Deluxe</option>
+          <option value="suite">Suite Premium</option>
+        </select>
+
+        <label for="checkin">Fecha de entrada:</label>
+        <input type="date" id="checkin" required>
+
+        <label for="checkout">Fecha de salida:</label>
+        <input type="date" id="checkout" required>
+
+        <label for="guests">Número de huéspedes:</label>
+        <input type="number" id="guests" min="1" max="6" required>
+
+        <button type="submit" class="btn">Comprobar disponibilidad</button>
+      </form>
+
+      <div id="booking-result"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hotel Los Tamarindos</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
