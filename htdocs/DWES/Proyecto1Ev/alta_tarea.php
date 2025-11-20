@@ -26,28 +26,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
+<h2>Formulario de Alta de Tarea</h2>
+
 <form method="POST">
-    <input type="text" name="nif_cif" placeholder="NIF/CIF"><br>
-    <input type="text" name="persona_contacto" placeholder="Persona de contacto"><br>
-    <input type="text" name="telefono_contacto" placeholder="Teléfono"><br>
-    <textarea name="descripcion" placeholder="Descripción"></textarea><br>
-    <input type="email" name="correo_contacto" placeholder="Correo electrónico"><br>
-    <input type="text" name="direccion" placeholder="Dirección"><br>
-    <input type="text" name="poblacion" placeholder="Población"><br>
-    <input type="text" name="codigo_postal" placeholder="Código postal"><br>
+    <input type="text" name="nif_cif" placeholder="NIF/CIF">
+    <input type="text" name="persona_contacto" placeholder="Persona de contacto">
+    <input type="text" name="telefono_contacto" placeholder="Teléfono">
+    <textarea name="descripcion" placeholder="Descripción"></textarea>
+    <input type="email" name="correo_contacto" placeholder="Correo electrónico">
+    <input type="text" name="direccion" placeholder="Dirección">
+    <input type="text" name="poblacion" placeholder="Población">
+    <input type="text" name="codigo_postal" placeholder="Código postal">
     <select name="provincia">
         <option value="21">Huelva</option>
         <option value="41">Sevilla</option>
         <option value="11">Cádiz</option>
-    </select><br>
+    </select>
     <select name="estado">
         <option value="B">Esperando aprobación</option>
         <option value="P">Pendiente</option>
         <option value="R">Realizada</option>
         <option value="C">Cancelada</option>
-    </select><br>
-    <input type="date" name="fecha_realizacion"><br>
-    <input type="text" name="operario_encargado" placeholder="Operario encargado"><br>
-    <textarea name="anotaciones_anteriores" placeholder="Anotaciones anteriores"></textarea><br>
+    </select>
+    <input type="date" name="fecha_realizacion">
+    <input type="text" name="operario_encargado" placeholder="Operario encargado">
+    <textarea name="anotaciones_anteriores" placeholder="Anotaciones anteriores"></textarea>
     <button type="submit">Guardar tarea</button>
 </form>

@@ -1,76 +1,123 @@
-body{
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    background-color: #fff;
-}
-/*header*/
-.header{
-    background-color: #005f40;
-    padding: 1em 2em;
+/* ===================== */
+/* BASE GENERAL           */
+/* ===================== */
+* {
+  box-sizing: border-box;
 }
 
-.nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
 }
 
-.nav ul{
-    list-style: none;
-    display: flex;
-    gap: 1em;
-    margin: 0;
+/* ===================== */
+/* CABECERA Y MENÚ       */
+/* ===================== */
+.header, header {
+  background-color: #005f40;
+  padding: 1em 2em;
 }
 
-.nav a{
-    color: black;
-    text-decoration: none;
-    font-size: 500;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.logo{
-    color: black;
-    font-weight: bold;
-    font-size: 1.3em;
+.logo {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-transform: uppercase;
 }
 
-/*Hero*/
-
-.hero{
-    background: url(../img/hotel.jpg) center/cover no-repeat;
-    text-align: center;
-    padding: 8em 1em;
-    color: white;
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2em;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-content{
-    background-color: rgba(0, 0, 0, 0.4);
-    display: inline-block;
-    padding: 2em 3em;
-    border-radius: 10px;
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.btn{
-    background: #ffb400;
-    color: white;
-    padding: 0.8em 1.5em;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-}
-/*Habitaciones*/
-.rooms{
-    padding: 3em 1em;
-    text-align: center;
+.nav a:hover,
+.nav a.active {
+  color: #ffb400;
+  border-bottom: 2px solid #ffb400;
+  padding-bottom: 2px;
 }
 
-.room-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2em;
-    margin-top: 2em;
+/* ===================== */
+/* SECCIÓN HERO           */
+/* ===================== */
+.hero {
+  background: url(../img/hotel.jpg) center/cover no-repeat;
+  text-align: center;
+  padding: 8em 1em;
+  color: white;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 2em 3em;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2.2em;
+  margin-bottom: 0.4em;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.hero-content a {
+  background: #ffb400;
+  color: #fff;
+  padding: 0.8em 1.5em;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hero-content a:hover {
+  background-color: #e09d00;
+}
+
+/* ===================== */
+/* HABITACIONES DESTACADAS */
+/* ===================== */
+.rooms {
+  padding: 3em 1em;
+  text-align: center;
+}
+
+.rooms h2 {
+  font-size: 1.8em;
+  color: #005f40;
+  margin-bottom: 1em;
+}
+
+.room-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  margin-top: 2em;
 }
 
 .room img {
@@ -83,30 +130,9 @@ body{
   transform: scale(1.05);
 }
 
-/*Reseñas */
-.reviews {
-  background: #f4f4f4;
-  padding: 3em 1em;
-  text-align: center;
-}
-
-.review {
-  max-width: 500px;
-  margin: auto;
-  font-style: italic;
-}
-
-/*Footer */
-footer {
-  background: #003020;
-  color: white;
-  text-align: center;
-  padding: 1.5em 0;
-}
-
-/*===================ROOMS=========================*/
-
-/* 🌆 Encabezado de página interna */
+/* ===================== */
+/* PÁGINA ROOMS COMPLETA  */
+/* ===================== */
 .page-header {
   text-align: center;
   background-color: #f4f4f4;
@@ -116,9 +142,10 @@ footer {
 
 .page-header h1 {
   margin-bottom: 0.3em;
+  font-size: 2em;
+  color: #005f40;
 }
 
-/* 🏠 Contenedor general de habitaciones */
 .rooms-container {
   display: flex;
   flex-wrap: wrap;
@@ -127,7 +154,6 @@ footer {
   padding: 3em 1em;
 }
 
-/* 💎 Tarjeta individual de habitación */
 .room-card {
   background-color: #fff;
   border-radius: 10px;
@@ -154,6 +180,7 @@ footer {
 
 .room-info h2 {
   margin: 0.5em 0;
+  color: #005f40;
 }
 
 .room-info p {
@@ -166,11 +193,10 @@ footer {
   display: block;
   font-size: 1.2em;
   font-weight: bold;
-  color: #005f40;
+  color: #ffb400;
   margin: 1em 0;
 }
 
-/* Botón de reservar */
 .room-info .btn {
   display: inline-block;
   background-color: #ffb400;
@@ -186,7 +212,284 @@ footer {
   background-color: #e09d00;
 }
 
-/* Activo en menú */
-.nav a.active {
-  border-bottom: 2px solid #ffb400;
+/* ===================== */
+/* SOBRE NOSOTROS (ABOUT) */
+/* ===================== */
+.about {
+  padding: 3em 2em;
+  background-color: #fff;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about-text {
+  flex: 1 1 450px;
+}
+
+.about-text h2 {
+  color: #005f40;
+  margin-bottom: 1em;
+}
+
+.about-text h3 {
+  color: #ffb400;
+  margin-top: 1.2em;
+}
+
+.about-text ul {
+  list-style-type: square;
+  padding-left: 1.2em;
+}
+
+.about-text p {
+  margin-bottom: 1em;
+  color: #444;
+}
+
+.about-image {
+  flex: 1 1 400px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===================== */
+/* RESERVAS (BOOKING)     */
+/* ===================== */
+.booking {
+  padding: 3em 1em;
+  background-color: #f8f9fa;
+}
+
+.booking-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.booking-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking-container label {
+  font-weight: 600;
+}
+
+.booking-container input,
+.booking-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.booking-container button {
+  background-color: #ffb400;
+  color: #fff;
+  padding: 0.9em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.booking-container button:hover {
+  background-color: #e09d00;
+}
+
+/* ===================== */
+/* CONTACTO               */
+/* ===================== */
+.contact {
+  padding: 3em 1em;
+  background-color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3em;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#contact-form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f4f4f4;
+  padding: 2em;
+  border-radius: 12px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#contact-form button {
+  background-color: #005f40;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+  background-color: #00472e;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+}
+
+.contact-info h3 {
+  color: #005f40;
+  margin-bottom: 0.8em;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+/* ===================== */
+/* RESEÑAS Y FOOTER       */
+/* ===================== */
+.reviews {
+  background: #f4f4f4;
+  padding: 3em 1em;
+  text-align: center;
+}
+
+.reviews h2 {
+  color: #005f40;
+}
+
+.review {
+  max-width: 500px;
+  margin: auto;
+  font-style: italic;
+}
+
+footer {
+  background: #003020;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+  margin-top: 2em;
+  font-size: 0.9em;
+}
+
+/* ===================== */
+/* RESPONSIVE             */
+/* ===================== */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+  }
+
+  .about-container,
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 6em 1em;
+  }
+
+  .room-card {
+    width: 90%;
+  }
+
+  .booking-container {
+    width: 90%;
+    padding: 1.5em;
+  }
+
+  .logo {
+    font-size: 1.2em;
+  }
+}
+/* ===================== */
+/* LOGIN & REGISTER       */
+/* ===================== */
+.auth-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em 1em;
+  background-color: #f8f9fa;
+}
+
+.auth-container {
+  background: #fff;
+  padding: 2.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  color: #005f40;
+  margin-bottom: 1em;
+}
+
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.auth-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.auth-container button {
+  background-color: #ffb400;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #e09d00;
+}
+
+.auth-text {
+  margin-top: 1em;
+  font-size: 0.9em;
 }

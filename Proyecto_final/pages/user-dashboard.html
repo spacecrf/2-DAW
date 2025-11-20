@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi cuenta - Los Tamarindos</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">Los Tamarindos</div>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../rooms.html">Habitaciones</a></li>
+        <li><a href="../booking.html">Reservas</a></li>
+        <li><a href="#" id="logoutBtn">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="auth-section">
+    <div class="auth-container">
+      <h2>Mi cuenta</h2>
+      <p id="userInfo"></p>
+      <a href="../booking.html" class="btn">Hacer una reserva</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hotel Los Tamarindos</p>
+  </footer>
+
+  <script>
+    const loggedIn = localStorage.getItem("loggedIn");
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!loggedIn || !user) {
+      alert("Debes iniciar sesión primero.");
+      window.location.href = "login.html";
+    }
+
+    document.getElementById("userInfo").textContent = `Bienvenido, ${user.name} (${user.email})`;
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedIn");
+      alert("Sesión cerrada correctamente.");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

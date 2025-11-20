@@ -60,17 +60,14 @@ function actualizarTotal(){
 
 function copiarListado(){
   const lines = COMPONENTES.map(c=>`- [${c.categoria}] ${c.nombre} — ${formatEUR(c.precio)}  ${c.url && !c.url.startsWith('PEGA_AQUI')? c.url: ''}`);
-  const texto = 'Listado de componentes (estimado):
-' + lines.join('
-');
+  const texto = 'Listado de componentes (estimado):' + lines.join('');
   navigator.clipboard.writeText(texto).then(()=> avisoTemporal('Listado copiado al portapapeles')).catch(()=> alert('No se pudo copiar.'));
 }
 
 function descargarCSV(){
   const headers = ['n','categoria','nombre','precio','moneda','tienda','url','nota'];
   const rows = COMPONENTES.map(c=> headers.map(h=> String(c[h]??'')).join(';'));
-  const csv = [headers.join(';'), ...rows].join('
-');
+  const csv = [headers.join(';'), ...rows].join('');
   const blob = new Blob(['﻿'+csv], {type:'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download='componentes.csv'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
