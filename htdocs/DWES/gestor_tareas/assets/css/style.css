@@ -66,6 +66,13 @@ h1 {
     color: white;
 }
 
+<<<<<<< HEAD
+=======
+.btn-alta {
+    background: green;
+}
+
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
 .btn-modificar {
     background: #3c8dbc;
 }

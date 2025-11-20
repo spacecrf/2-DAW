@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """
 b2_12_GESTION_ESTUDIANTES.py
 Actividad final - Bloque 02
@@ -5,6 +6,8 @@ Programa para gestionar estudiantes: añadir, mostrar, buscar, calcular promedio
 Escrito con un estilo accesible, mensajes en español y validaciones básicas.
 """
 
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
 # Variable global para autoincrementar IDs
 SIGUIENTE_ID = 1
 
@@ -72,6 +75,7 @@ def obtener_float(mensaje, minimo=None, maximo=None):
 # Funciones principales
 # -------------------------
 def calcular_promedio(notas):
+<<<<<<< HEAD
     """
     Calcula el promedio de una lista de notas (lista de floats).
     Si la lista está vacía, devuelve 0.0.
@@ -79,27 +83,42 @@ def calcular_promedio(notas):
     if not notas:
         return 0.0
     # Cálculo paso a paso (más humano): suma y división
+=======
+
+    if not notas:
+        return 0.0
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     suma = 0.0
     for n in notas:
         suma += n
     promedio = suma / len(notas)
+<<<<<<< HEAD
     # Redondear a 2 decimales para mostrar
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     return round(promedio, 2)
 
 
 def determinar_estado(promedio):
+<<<<<<< HEAD
     """
     Determina el estado del estudiante según su promedio.
     Aprobado si promedio >= 5.0, en caso contrario Suspenso.
     """
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     return "Aprobado" if promedio >= 5.0 else "Suspenso"
 
 
 def crear_estudiante(nombre, edad, notas):
+<<<<<<< HEAD
     """
     Crea y devuelve un diccionario que representa a un estudiante.
     Usa la variable global SIGUIENTE_ID para asignar el id único.
     """
+=======
+
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     global SIGUIENTE_ID
     promedio = calcular_promedio(notas)
     estado = determinar_estado(promedio)
@@ -116,7 +135,10 @@ def crear_estudiante(nombre, edad, notas):
 
 
 def agregar_estudiante():
+<<<<<<< HEAD
     """Solicita datos al usuario y añade un nuevo estudiante a la lista global."""
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     print("\n--- AGREGAR NUEVO ESTUDIANTE ---")
     nombre = input("Nombre del estudiante: ").strip()
     while not nombre:
@@ -142,7 +164,10 @@ def agregar_estudiante():
 
 
 def mostrar_estudiantes():
+<<<<<<< HEAD
     """Muestra todos los estudiantes en formato tabular."""
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     if not estudiantes:
         print("\nNo hay estudiantes registrados.")
         return
@@ -155,7 +180,10 @@ def mostrar_estudiantes():
 
 
 def buscar_estudiante_por_id(estudiante_id):
+<<<<<<< HEAD
     """Devuelve el estudiante cuyo id coincide o None si no existe."""
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     for e in estudiantes:
         if e['id'] == estudiante_id:
             return e
@@ -163,7 +191,10 @@ def buscar_estudiante_por_id(estudiante_id):
 
 
 def calcular_promedio_clase():
+<<<<<<< HEAD
     """Calcula y muestra el promedio general de la clase (promedio de promedios)."""
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     if not estudiantes:
         print("\nNo hay estudiantes para calcular el promedio de la clase.")
         return 0.0
@@ -176,7 +207,10 @@ def calcular_promedio_clase():
 
 
 def estudiantes_aprobados():
+<<<<<<< HEAD
     """Devuelve (y muestra) la lista de estudiantes aprobados usando comprensión de listas."""
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     aprobados = [e for e in estudiantes if e['promedio'] >= 5.0]
     if not aprobados:
         print("\nNo hay estudiantes aprobados.")
@@ -188,6 +222,7 @@ def estudiantes_aprobados():
 
 
 def generar_informe_completo():
+<<<<<<< HEAD
     """
     Genera un informe completo:
     - lista de nombres, promedios y estados (usa zip y enumerate para recorrer)
@@ -195,6 +230,8 @@ def generar_informe_completo():
     - mejor y peor promedio
     - muestra los 3 primeros estudiantes usando un iterador
     """
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     if not estudiantes:
         print("\nNo hay datos para generar el informe.")
         return
@@ -207,11 +244,17 @@ def generar_informe_completo():
     print(f"{'Nº':>3} {'Nombre':25} {'Promedio':>8} {'Estado':>10}")
     print("-" * 52)
 
+<<<<<<< HEAD
     # Uso de zip y enumerate
     for idx, (nom, prom, est) in enumerate(zip(nombres, promedios, estados), start=1):
         print(f"{idx:>3} {nom[:25]:25} {prom:8} {est:>10}")
 
     # Estadísticas adicionales
+=======
+    for idx, (nom, prom, est) in enumerate(zip(nombres, promedios, estados), start=1):
+        print(f"{idx:>3} {nom[:25]:25} {prom:8} {est:>10}")
+
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     promedio_general = calcular_promedio_clase()
     mejor = max(estudiantes, key=lambda x: x['promedio'])
     peor = min(estudiantes, key=lambda x: x['promedio'])
@@ -220,7 +263,10 @@ def generar_informe_completo():
     print(f"Mejor promedio: {mejor['nombre']} -> {mejor['promedio']}")
     print(f"Peor promedio: {peor['nombre']} -> {peor['promedio']}")
 
+<<<<<<< HEAD
     # Usar un iterador para ver los tres primeros estudiantes
+=======
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     it = iter(estudiantes)
     print("\nTres primeros estudiantes (usando iterador):")
     for i in range(3):
@@ -236,9 +282,14 @@ def generar_informe_completo():
 # Función principal
 # -------------------------
 def main():
+<<<<<<< HEAD
     """Bucle principal del programa."""
     print("Bienvenido/a al gestor de estudiantes. Soy tu asistente sencillo para manejar los datos.")
     # Pre-cargar algunos estudiantes de ejemplo (útil para pruebas)
+=======
+    print("Bienvenido/a al gestor de estudiantes. Soy tu asistente sencillo para manejar los datos.")
+    # Pre-cargar algunos estudiantes de ejemplo
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     precarga = [
         create_example_student("Ana García", 20, [7.5, 8.0, 6.5]),
         create_example_student("Luis Pérez", 19, [4.0, 5.5]),
@@ -282,10 +333,14 @@ def main():
 # Helpers de ejemplo (no solicitados pero útiles)
 # -------------------------
 def create_example_student(nombre, edad, notas):
+<<<<<<< HEAD
     """
     Crea un estudiante sin modificar la variable global SIGUIENTE_ID directamente.
     Esta función se usa para precargar datos de ejemplo en el programa.
     """
+=======
+
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     global SIGUIENTE_ID
     promedio = calcular_promedio(notas)
     estado = determinar_estado(promedio)

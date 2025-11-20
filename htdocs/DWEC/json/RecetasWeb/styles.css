@@ -1,0 +1,141 @@
+/* RESET SUAVE */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin:25px;
+    background:#ffffff;
+    color:#222;
+}
+
+/* TITLE */
+h1{
+    margin-bottom:20px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* GRID donde van las recetas */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.card{
+    background:rgb(219, 219, 219);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.06);
+    padding-bottom:12px;
+    cursor:pointer;
+    transition: all .25s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 22px rgba(0,0,0,0.10);
+}
+
+/* imagen receta */
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+/* nombre receta */
+.card h3{
+    font-size:19px;
+    margin:12px;
+    font-weight:600;
+}
+
+/* rating estrella */
+.rating{
+    margin: 0 12px;
+    color: #ff9900;
+    font-weight:bold;
+}
+
+/* filtros */
+.filters{
+    margin-bottom:20px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.filters select,
+.filters input{
+    padding:8px 12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    background:rgb(238, 238, 238);
+    font-size:14px;
+    transition:border .2s ease;
+}
+
+.filters button{
+    padding:8px 14px;
+    border:none;
+    background:#221efa;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:background .2s ease;
+}
+
+.filters button:hover{
+    background:#58c916;
+}
+
+/* DETALLE / MODAL */
+#detalle{
+    display:none;
+    position:fixed;
+    inset:0; /* reemplaza top/left/width/height */
+    background:rgba(0,0,0,0.65);
+    align-items:center;
+    justify-content:center;
+}
+
+#detalleBox{
+    background:#fff;
+    padding:25px;
+    width:380px;
+    max-height:80vh;
+    overflow-y:auto;
+    border-radius:12px;
+    animation: fadeIn .25s ease;
+    position:relative; /* necesario para botón absolute */
+}
+
+/* botón cerrar */
+#btnCerrar{
+    position:absolute;
+    top:8px;
+    right:10px;
+    background:none;
+    border:none;
+    font-size:22px;
+    cursor:pointer;
+    color:#666;
+    transition:.2s;
+}
+#btnCerrar:hover{
+    color:#000;
+}
+
+/* animación suave entrada */
+@keyframes fadeIn{
+    from{ opacity:0; transform:scale(.93); }
+    to{ opacity:1; transform:scale(1); }
+}

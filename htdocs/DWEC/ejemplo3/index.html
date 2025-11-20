@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="crearOpcion();">
+        Crear opcion
+    </button>
+    <button onclick="borrarOpcion();">
+        borrar opcion
+    </button>
+    <ul id="opciones">
+
+    </ul>
+        <div>
+            <h3>Ejercicio 1</h3>
+            <hr>
+            <p>Crear una tabla (pidiendo filas y columnas)</p>
+            <button onclick=crearTabla();>▶ Ejecutar</button><br>
+        </div>
+    <span id="resultado"></span>
+
+    <div>
+        <h3>Ejercicio 2</h3>
+        <hr>
+        <p>Disponemos de una tabla de 3x3 con sus celdas puestas a cero tal y como se ilustra a continuación:</p>
+        <style>
+            td{
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                cursor: pointer;
+            }
+        </style>
+        <table border="1">
+            <tr>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+            </tr>
+            <tr>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+            </tr>
+            <tr>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+                <td onclick="cambiarColor(this)">0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script src="utiles.js"></script>
+</html>
+
+

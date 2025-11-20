@@ -6,6 +6,10 @@
   <title>Iniciar sesión - Los Tamarindos</title>
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+<<<<<<< HEAD
+=======
+
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
 <body>
   <header>
     <nav class="nav">
@@ -23,6 +27,7 @@
   <section class="auth-section">
     <div class="auth-container">
       <h2>Iniciar sesión</h2>
+<<<<<<< HEAD
       <form id="loginForm">
         <label for="email">Correo electrónico</label>
         <input type="email" id="email" placeholder="usuario@correo.com" required>
@@ -34,15 +39,35 @@
         <p class="auth-text">
           ¿No tienes cuenta?
           <a href="register.html">Regístrate aquí</a>
+=======
+
+      <form action="../backend/login.php" method="POST">
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Contraseña</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Entrar</button>
+
+        <p>
+          ¿No tienes cuenta?
+          <a href="register.html">Registrarte</a>
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
         </p>
       </form>
     </div>
   </section>
 
   <footer>
+<<<<<<< HEAD
     <p>&copy; 2025 Hotel Los Tamarindos</p>
   </footer>
 
   <script src="../assets/js/auth.js"></script>
+=======
+    <p>&copy; 2025 Los Tamarindos</p>
+  </footer>
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
 </body>
 </html>

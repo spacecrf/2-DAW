@@ -1,0 +1,37 @@
+
+body {
+  margin: 0;
+}
+.cabecera {
+  background: red;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+.contenedor {
+  display: flex;
+}
+.lateral {
+  background: yellow;
+  width: 20%;
+  text-align: center;
+  padding: 20px;
+}
+.principal {
+  background: lightgray;
+  width: 60%;
+  text-align: center;
+  padding: 20px;
+}
+.derecho {
+  background: lightgreen;
+  width: 20%;
+  text-align: center;
+  padding: 20px;
+}
+.pie {
+  background: lightblue;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}

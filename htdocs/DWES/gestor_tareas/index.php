@@ -9,10 +9,18 @@
 
 <body>
     <h1>Gestor de Tareas</h1>
+<<<<<<< HEAD
     <ul>
         <li><a href='tareas/alta/form.php'>Dar de alta tarea</a></li>
         <li><a href='tareas/modificar/form.php'>Modificar tarea</a></li>
         <li><a href='tareas/eliminar/confirmar.php'>Eliminar tarea</a></li>
+=======
+        <button class="btn btn-alta"><a href='tareas/alta/form.php'>Dar de alta tarea</a></button>
+    <ul>
+        <!-- <li><a href='tareas/alta/form.php'>Dar de alta tarea</a></li>
+        <li><a href='tareas/modificar/form.php'>Modificar tarea</a></li>
+        <li><a href='tareas/eliminar/confirmar.php'>Eliminar tarea</a></li> -->
+>>>>>>> a9d14d0981aa59b928e491ce4d3108639552b132
     </ul> 
 
     <table class="tabla-tarea">

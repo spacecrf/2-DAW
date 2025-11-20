@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Factura</title>
+        <style>
+        table, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            margin: auto;
+            width: 50%;
+        }
+        td {
+            padding: 5px;
+            width: 50px;
+        }
+        label {
+            margin-left: 25%;
+        }
+    </style>
+    </head>
+    <body>
+        <form>
+            Codigo:
+            <input type="text" id="codigo" onchange="autocompletarCampos()">
+            Descripcion:
+            <input type="text" id="descripcion">
+            Cantidad:
+            <input type="number" id="cantidad">
+            Precio:
+            <input type="number" id="precio">
+            <input type="button" onclick="agregar()" value="OK."> <br><br>
+        </form>
+
+        <table id="tabla">
+            <tr>
+                <td>Codigo</td>
+                <td>Descripcion</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+                <td>SubTotal</td>
+            </tr>
+        </table>
+        <label>Total: <span id="total">0€</span></label>
+
+
+        <form>
+            <table id="tabla2">
+                <tr>
+                    <td>Codigo</td>
+                    <td>Descripcion</td>
+                    <td>Precio</td>
+                </tr>
+
+                <tr>
+                    <td id="codigo3">1</td>
+                    <td id="descripcion3">Martillo</td>
+                    <td id="cantidad3">10</td>
+                </tr>
+                <tr>
+                    <td id="codigo4">2</td>
+                    <td id="descripcion4">Arandela</td>
+                    <td id="cantidad4">0.25</td>
+                </tr>
+                <tr>
+                    <td id="codigo5">3</td>
+                    <td id="descripcion5">Tornillo</td>
+                    <td id="cantidad5">2</td>
+                </tr>
+
+            </table>
+        </form>
+
+        <script src="utiles.js"></script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo DOM</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="favi.png">
+</head>
+
+<body>
+    <h1 id="titulo">Ejercicios DOM</h1>
+
+    <section>
+        <div>
+            <h3>Ejercicio 1</h3>
+            <hr>
+            <p>Cambiar titulo DOM</p>
+            <button onclick=muestraTitulo();>▶ Ejecutar</button><br>
+        </div>
+
+        <div>
+            <h3>Ejercicio 2</h3>
+            <hr>
+            <p>Sumar numeros al contador</p>
+            <h1 id="cuenta">0</h1>
+            <button onclick="contador();">▶ Ejecutar</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 3</h3>
+            <hr>
+            <p>Cambiar todos los parrafos</p>
+            <button onclick="parrafos();">▶ Ejecutar</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 4</h3>
+            <hr>
+            <p>Sumar celdas de la tabla</p>
+            <table>
+                <tr>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>66</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td class="derecha">1</td>
+                    <td class="derecha">2</td>
+                    <td class="derecha">3</td>
+                    <td class="derecha">4</td>
+                </tr>
+
+            </table>
+            <span id="suma">0</span>
+            <button onclick="sumaCelda();">▶ Ejecutar</button>
+        </div>
+
+        <div>
+            <h3>Ejercicio 5</h3>
+            <hr>
+            <p>Aumentar imagen</p>
+            <img src="arbol.jpg" width="300" alt="" id="imagen">
+            <button onclick="aumenta();">▶ Ejecutar</button>
+        </div>
+
+         <div>
+            <h3>Ejercicio 6</h3>
+            <hr>
+            <p>Cambiar estilo</p>
+            <button onclick="cambiaestilo();"id= "micaja" style="width: 100px; height: 100px; background-color: red;">▶ Ejecutar</button>
+        </div>
+
+        
+
+    </section>
+</body>
+<script src="scripts.js"></script>
+
+
+</html>

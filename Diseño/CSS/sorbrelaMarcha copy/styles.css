@@ -1,0 +1,30 @@
+*{
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+.conteiner{
+    display: flex;
+    flex-flow: row wrap;
+}
+.conteiner-inner{
+    border: 2px solid blue;
+}
+.colum1,
+.conteiner-inner{width: 100%;}
+
+@media (min-width: 600px) {
+    .colum1{
+        width: 25%;
+        height: 100vh;
+    }
+    .conteiner-inner{
+        width: 75%;
+    }
+}
+@media (min-width: 800px) {
+    .conteiner{
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
