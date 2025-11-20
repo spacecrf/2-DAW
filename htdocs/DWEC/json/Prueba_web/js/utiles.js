@@ -15,8 +15,11 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${alumno.nombre}</td>
                     <td>${alumno.apellido}</td>
                     <td>${alumno.notas}</td>
-                    <td><button onclick="eliminaralumno(${alumno.codigo});">Eliminar</button></td>
-                    <td><button onclick="modificaralumno(${alumno.codigo});">Modificar</button></td>
+                    <td>
+                    <button onclick="eliminaralumno(${alumno.codigo});">Eliminar</button>
+                    <button onclick="modificaralumno(${alumno.codigo});">Modificar</button>
+                    <button onclick="verNotas(${alumno.codigo});">Ver notas</button>
+                    </td>
                 `;
                 tbody.appendChild(fila);
             });
@@ -31,7 +34,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
-function modificaralumno(codigo){
+function verNotas(codigo) {
+    fetch(`php/vernotas.php?codigo=${codigo}`)
+        .then(res => res.json())
+        .then(data => {
+            const div = document.getElementById("notas");
+            const ul = document.createElement("ul");
+            data.forEach(nota => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+            Materia: ${nota.asignatura}, 
+            Nota: ${nota.nota}
+            `;
+                ul.appendChild(li);
+            });
+            div.appendChild(ul)
+        });
+}
+
+function modificaralumno(codigo) {
     const nombre = prompt("Introduce el nuevo nombre:");
     if (!nombre) return;
 
@@ -46,7 +67,7 @@ function modificaralumno(codigo){
     fetch(url)
         .then(res => res.json())
         .then(data => {
-            if(data.status === "success"){
+            if (data.status === "success") {
                 alert(data.message);
                 location.reload(); // recarga la tabla actualizada
             } else {
@@ -56,7 +77,7 @@ function modificaralumno(codigo){
         .catch(err => console.error(err));
 }
 
-function eliminaralumno(codigo){
+function eliminaralumno(codigo) {
     fetch(`php/eliminaralumno.php?codigo=${codigo}`)
         .then(res => res.json())
         .then(data => {

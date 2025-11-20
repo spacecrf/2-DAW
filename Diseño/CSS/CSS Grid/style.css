@@ -1,0 +1,67 @@
+body {
+    font-family: Arial;
+    background: #f2f4f6;
+    padding: 20px;
+}
+
+.grid {
+    width: 420px;
+    background: #d0d7de;
+    padding: 12px;
+    gap: 10px;
+    display: grid;
+    margin-bottom: 40px;
+}
+
+.c {
+    background: #5d6c76;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+/* EJERCICIO 1 */
+.ej1 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* EJERCICIO 2 */
+.ej2 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.span3 {
+    grid-column: span 3;
+}
+
+/* EJERCICIO 3 */
+.ej3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.head {
+    grid-column: 1 / 4; /* ocupa las 3 columnas */
+}
+
+/* última fila centrada */
+.c5 {
+    grid-column: 2;
+}
+.c6 {
+    grid-column: 3;
+}
+
+/* EJERCICIO 4 */
+.ej4 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "title title title"
+        "c2 c3 c4"
+        "c5 . c6";
+}
+
+.title { grid-area: title; }
+.c2 { grid-area: c2; }
+.c3 { grid-area: c3; }
+.c4 { grid-area: c4; }
+.c5 { grid-area: c5; }
+.c6 { grid-area: c6; }
