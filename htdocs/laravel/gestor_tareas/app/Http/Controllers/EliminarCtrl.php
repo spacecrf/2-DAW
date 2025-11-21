@@ -14,7 +14,7 @@ class EliminarCtrl
             abort(404, 'Tarea no encontrada');
         }
 
-        return view('eliminar', ['tarea' => $tarea]);
+        return view('eliminar', array('tarea' => $tarea));
     }
 
     public function eliminar($id)

@@ -17,21 +17,19 @@ class AltaCtrl
 
             if (!empty(Funciones::$errores)) {
                 return view('alta', $_POST);
+            } else {
+                $model = new Tareas();
+                $model->registrarAlta($_POST);
+
+                return redirect('/')->with('mensaje', 'Tarea registrada correctamente.');
             }
-
-            $model = new Tareas();
-            $model->registrarAlta($_POST);
-
-            return redirect('/')->with('mensaje', 'Tarea registrada correctamente.');
-        } 
-        else 
-        {
+        } else {
             // campos vacíos con TU NOMBRE REAL DE BD
             $datos = [
                 'nif_cif' => '',
                 'persona_contacto' => '',
                 'telefono_contacto' => "",
-                'descripcion' => "",   
+                'descripcion' => "",
                 'correo_contacto' => "",
                 'direccion' => "",
                 'poblacion' => "",
@@ -72,8 +70,7 @@ class AltaCtrl
 
         if ($correo_contacto == "") {
             Funciones::$errores['correo_contacto'] = "Debe introducir el correo";
-        } 
-        else if (!filter_var($correo_contacto, FILTER_VALIDATE_EMAIL)) {
+        } else if (!filter_var($correo_contacto, FILTER_VALIDATE_EMAIL)) {
             Funciones::$errores['correo_contacto'] = "Correo no válido";
         }
 
@@ -89,8 +86,7 @@ class AltaCtrl
 
         if ($fecha_realizacion == "") {
             Funciones::$errores['fecha_realizacion'] = "Debe introducir la fecha de realización";
-        } 
-        else if ($fecha_realizacion <= $fechaActual) {
+        } else if ($fecha_realizacion <= $fechaActual) {
             Funciones::$errores['fecha_realizacion'] = "Debe ser posterior a hoy";
         }
     }

@@ -18,38 +18,38 @@
         <input type="text" name="id" value="{{ $id }}" readonly><br><br>
 
         <label>NIF/CIF:</label><br>
-        <input type="text" name="nifCif" value="{{ $nif_cif }}"><br>
+        <input type="text" name="nif_cif" value="{{ $nif_cif }}"><br>
         {!! \App\Models\Funciones::verErrores('nif_cif') !!}
         <br>
 
         <label>Persona de contacto:</label><br>
-        <input type="text" name="personaNombre" value="{{ $persona_contacto }}"><br>
-        {!! \App\Models\Funciones::verErrores('nombre_persona') !!}
+        <input type="text" name="personaContacto" value="{{ $persona_contacto }}"><br>
+        {!! \App\Models\Funciones::verErrores('persona_contacto') !!}   
         <br>
 
         <label>Teléfono:</label><br>
-        <input type="text" name="telefono" value="{{ $telefono }}"><br>
-        {!! \App\Models\Funciones::verErrores('telefono') !!}
+        <input type="text" name="telefono_contacto" value="{{ $telefono_contacto }}"><br>
+        {!! \App\Models\Funciones::verErrores('telefono_contacto') !!}
         <br>
 
         <label>Correo electrónico:</label><br>
-        <input type="text" name="correo" value="{{ $correo }}"><br>
-        {!! \App\Models\Funciones::verErrores('correo') !!}
+        <input type="text" name="correo_contacto" value="{{ $correo_contacto }}"><br>
+        {!! \App\Models\Funciones::verErrores('correo_contacto') !!}
         <br>
 
         <label>Descripción de la tarea:</label><br>
-        <textarea name="descripcionTarea">{{ $descripcion_tarea }}</textarea><br>
-        {!! \App\Models\Funciones::verErrores('descripcion_tarea') !!}
+        <textarea name="descripcion">{{ $descripcion }}</textarea><br>
+        {!! \App\Models\Funciones::verErrores('descripcion') !!}
         <br>
 
         <label>Dirección:</label><br>
-        <input type="text" name="direccionTarea" value="{{ $direccion }}"><br><br>
+        <input type="text" name="direccion" value="{{ $direccion }}"><br><br>
 
         <label>Población:</label><br>
         <input type="text" name="poblacion" value="{{ $poblacion }}"><br><br>
 
         <label>Código Postal:</label><br>
-        <input type="text" name="codigoPostal" value="{{ $codigo_postal }}"><br><br>
+        <input type="text" name="codigo_postal" value="{{ $codigo_postal }}"><br><br>
 
         <label>Provincia:</label><br>
         <select name="provincia">
@@ -60,15 +60,15 @@
         <br>
 
         <label>Estado:</label><br>
-        <select name="estadoTarea">
-            <option value="B" {{ $estado_tarea == "B" ? "selected" : "" }}>Esperando ser aprobada</option>
-            <option value="P" {{ $estado_tarea == "P" ? "selected" : "" }}>Pendiente</option>
-            <option value="R" {{ $estado_tarea == "R" ? "selected" : "" }}>Realizada</option>
-            <option value="C" {{ $estado_tarea == "C" ? "selected" : "" }}>Cancelada</option>
+        <select name="estado">
+            <option value="B" {{ $estado == "B" ? "selected" : "" }}>Esperando ser aprobada</option>
+            <option value="P" {{ $estado == "P" ? "selected" : "" }}>Pendiente</option>
+            <option value="R" {{ $estado == "R" ? "selected" : "" }}>Realizada</option>
+            <option value="C" {{ $estado == "C" ? "selected" : "" }}>Cancelada</option>
         </select><br><br>
 
         <label>Operario encargado:</label><br>
-        <select name="operarioEncargado">
+        <select name="operario_encargado">
             <option value="">Seleccione operario</option>
             <option value="Juan Pérez" {{ $operario_encargado == "Juan Pérez" ? "selected" : "" }}>Juan Pérez</option>
             <option value="María López" {{ $operario_encargado == "María López" ? "selected" : "" }}>María López</option>
@@ -79,12 +79,12 @@
         </select><br><br>
 
         <label>Fecha de realización:</label><br>
-        <input type="date" name="fechaRealizacion" value="{{ $fecha_realizacion }}"><br>
-        {!! \App\Models\Funciones::verErrores('fechaRealizacion') !!}
+        <input type="date" name="fecha_realizacion" value="{{ $fecha_realizacion }}"><br>
+        {!! \App\Models\Funciones::verErrores('fecha_realizacion') !!}
         <br>
 
-        <label for="anotacionesAnteriores">Anotaciones anteriores:</label><br>
-        <textarea id="anotacionesAnteriores" name="anotacionesAnteriores">{{ $anotaciones_anteriores }}</textarea><br><br>
+        <label for="anotaciones_anteriores">Anotaciones anteriores:</label><br>
+        <textarea id="anotaciones_anteriores" name="anotaciones_anteriores">{{ $anotaciones_anteriores }}</textarea><br><br>
 
         <label for="fichero_resumen">Fichero resumen:</label>
         <input type="file" id="fichero_resumen" name="fichero_resumen"><br><br>

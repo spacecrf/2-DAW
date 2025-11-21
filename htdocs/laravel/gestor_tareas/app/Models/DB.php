@@ -1,6 +1,8 @@
 <?php
 /* Clase encargada de gestionar las conexiones a la base de datos */
 namespace App\Models;
+
+use Illuminate\Support\Facades\Log;
 use mysqli;
 
 class DB
@@ -61,6 +63,7 @@ class DB
 	 */
 	public function query(string $sql): mixed
 	{
+		Log::debug("DB::query\n".$sql);
 		$this->result = $this->link->query($sql);
 		return $this->result;
 	}

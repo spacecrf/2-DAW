@@ -165,7 +165,7 @@ class Funciones
     public static function verErrores($campo)
     {
         if (isset(self::$errores[$campo])) {
-            echo "<div class=\"error\"> " . htmlspecialchars(self::$errores[$campo]) . "</div>";
+            return "<div class=\"error\"> " . htmlspecialchars(self::$errores[$campo]) . "</div>";
         } else {
             return "";
         }

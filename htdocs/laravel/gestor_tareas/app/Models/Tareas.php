@@ -38,13 +38,9 @@ class Tareas
             codigo_postal,
             provincia,
             estado,
-            fecha_creacion,
             operario_encargado,
             fecha_realizacion,
-            anotaciones_anteriores,
-            anotaciones_posteriores,
-            fichero_resumen,
-            fotos
+            anotaciones_anteriores
         ) VALUES (
             '{$datos['nif_cif']}',
             '{$datos['persona_contacto']}',
@@ -56,13 +52,9 @@ class Tareas
             '{$datos['codigo_postal']}',
             '{$datos['provincia']}',
             '{$datos['estado']}',
-            NOW(),
             '{$datos['operario_encargado']}',
             '{$datos['fecha_realizacion']}',
-            '{$datos['anotaciones_anteriores']}',
-            '{$datos['anotaciones_posteriores']}',
-            '{$datos['fichero_resumen']}',
-            '{$datos['fotos']}'
+            '{$datos['anotaciones_anteriores']}'
         )";
 
         $this->db->query($sql);

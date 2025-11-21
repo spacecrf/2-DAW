@@ -16,7 +16,7 @@ class ModificarCtrl
             abort(404, 'Tarea no encontrada');
         }
 
-        return view('modificar', $tarea);
+        return view('modificar', (array) $tarea);
     }
 
     public function actualizar($id)
@@ -45,39 +45,39 @@ class ModificarCtrl
     {
         extract($_POST);
 
-        if ($nifCif == "") {
+        if ($nif_cif == "") {
             Funciones::$errores['nif_cif'] = "Debe introducir el NIF/CIF de la persona encargada de la tarea";
         } else {
-            $resultado = Funciones::validarNif($nifCif);
+            $resultado = Funciones::validarNif($nif_cif);
             if ($resultado !== true) {
-                Funciones::$errores['nifCif'] = $resultado;
+                Funciones::$errores['nif_cif'] = $resultado;
             }
         }
 
-        if ($personaNombre === "") {
-            Funciones::$errores['nombre_persona'] = "Debe introducir el nombre de la persona encargada de la tarea";
+        if ($persona_contacto === "") {
+            Funciones::$errores['persona_contacto'] = "Debe introducir el nombre de la persona encargada de la tarea";
         }
 
-        if ($descripcionTarea === "") {
-            Funciones::$errores['descripcion_tarea'] = "Debe introducir la descripción de la tarea";
+        if ($descripcion === "") {
+            Funciones::$errores['descripcion'] = "Debe introducir la descripción de la tarea";
         }
 
-        if ($correo === "") {
-            Funciones::$errores['correo'] = "Debe introducir el correo de la persona encargada de la tarea";
-        } else if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-            Funciones::$errores['correo'] = "El correo introducido no es válido";
+        if ($correo_contacto === "") {
+            Funciones::$errores['correo_contacto'] = "Debe introducir el correo de la persona encargada de la tarea";
+        } else if (!filter_var($correo_contacto, FILTER_VALIDATE_EMAIL)) {
+            Funciones::$errores['correo_contacto'] = "El correo introducido no es válido";
         }
 
-        if ($telefono == "") {
-            Funciones::$errores['telefono'] = "Debe introducir el teléfono de la persona encargada de la tarea";
+        if ($telefono_contacto == "") {
+            Funciones::$errores['telefono_contacto'] = "Debe introducir el teléfono de la persona encargada de la tarea";   
         } else {
-            $resultado = Funciones::telefonoValido($telefono);
+            $resultado = Funciones::telefonoValido($telefono_contacto);     
             if ($resultado !== true) {
-                Funciones::$errores['telefono'] = $resultado;
+                Funciones::$errores['telefono_contacto'] = $resultado;
             }
         }
 
-        if ($codigoPostal != "" && !preg_match("/^[0-9]{5}$/", $codigoPostal)) {
+        if ($codigo_postal != "" && !preg_match("/^[0-9]{5}$/", $codigoPostal)) {
             Funciones::$errores['codigo_postal'] = "El código postal introducido no es válido, debe tener 5 números";
         }
 
