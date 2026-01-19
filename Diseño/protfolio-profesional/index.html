@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Portfolio Profesional | Manuel García</title>
+    <meta name="description" content="Portfolio profesional de desarrollo web. Proyectos, servicios y contacto. Diseño responsive y accesible.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="media/favicon/favicon.ico">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Manuel</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                aria-expanded="false" aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/about.html">Sobre mí</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/projects.html">Proyectos</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/services.html">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero-section bg-light text-dark pt-5 mt-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-5 fw-bold">Hola, soy Manuel</h1>
+                <p class="lead">
+                    Desarrollador web enfocado en crear experiencias digitales modernas,
+                    accesibles y optimizadas.
+                </p>
+                <a href="pages/projects.html" class="btn btn-primary btn-lg me-2">
+                    Ver proyectos
+                </a>
+                <a href="pages/contact.html" class="btn btn-outline-secondary btn-lg">
+                    Contacto
+                </a>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <img src="media/img/hero.webp"
+                     class="img-fluid rounded shadow"
+                     alt="Ilustración de desarrollo web profesional"
+                     loading="lazy">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= PROYECTOS DESTACADOS ================= -->
+<section class="container py-5">
+    <h2 class="text-center mb-4">Proyectos Destacados</h2>
+
+    <div id="carouselProjects" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="media/img/proyectos/proyecto1.webp"
+                     class="d-block w-100 rounded project-img"
+                     alt="Proyecto web corporativo">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Web Corporativa</h5>
+                    <p>Diseño responsive con Bootstrap.</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="media/img/proyectos/proyecto2.webp"
+                     class="d-block w-100 rounded project-img"
+                     alt="Aplicación web interactiva">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Aplicación Web</h5>
+                    <p>Interfaz moderna y accesible.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+                data-bs-target="#carouselProjects" data-bs-slide="prev"
+                aria-label="Proyecto anterior">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button"
+                data-bs-target="#carouselProjects" data-bs-slide="next"
+                aria-label="Proyecto siguiente">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- ================= SERVICIOS ================= -->
+<section class="bg-dark text-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Servicios</h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-dark">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Diseño Web</h3>
+                        <p class="card-text">
+                            Interfaces modernas, responsive y centradas en el usuario.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 text-dark">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Desarrollo Frontend</h3>
+                        <p class="card-text">
+                            HTML, CSS, JavaScript y Bootstrap optimizados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 text-dark">
+                    <div class="card-body">
+                        <h3 class="card-title h5">Accesibilidad & SEO</h3>
+                        <p class="card-text">
+                            Cumplimiento WCAG, rendimiento y posicionamiento web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="container py-5 text-center">
+    <h2>¿Trabajamos juntos?</h2>
+    <p class="lead">Estoy disponible para nuevos proyectos y colaboraciones.</p>
+    <a href="pages/contact.html" class="btn btn-primary btn-lg">
+        Contáctame
+    </a>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-dark text-light py-4">
+    <div class="container text-center">
+        <p class="mb-1">&copy; 2026 Manuel García</p>
+        <p class="mb-0">
+            <a href="#" class="text-light me-2">LinkedIn</a>
+            <a href="#" class="text-light me-2">GitHub</a>
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
