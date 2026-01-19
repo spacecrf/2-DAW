@@ -1,0 +1,159 @@
+/* =========================
+   VARIABLES
+========================= */
+$primary: #0d6efd;
+$secondary: #6c757d;
+$bg-dark: #121212;
+$text-dark: #222;
+$text-light: #f5f5f5;
+
+$max-width: 1200px;
+
+/* =========================
+   RESET Y BASE
+========================= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $text-dark;
+  background-color: #f8f9fa;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: $primary !important;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero-section {
+  background: linear-gradient(135deg, #ffffff, #f3f7ff);
+}
+
+.hero-section .btn-primary {
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+}
+
+.hero-section .btn-outline-secondary {
+  border-radius: 999px;
+  padding: 0.7rem 1.5rem;
+}
+
+/* =========================
+   HEADER (CENTRADO)
+========================= */
+header.text-center {
+  text-align: center;
+}
+
+header.text-center p.lead {
+  margin: 0 auto;
+  max-width: 700px;
+  color: $secondary;
+}
+
+/* =========================
+   GRID PROYECTOS
+========================= */
+.project-img {
+  height: 220px;         // ALTURA FIJA
+  object-fit: cover;     // RECORTA SIN DEFORMAR
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+  border: none;
+  border-radius: 1rem;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.btn-primary {
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+.service-card {
+  border: none;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  }
+
+  .card-body {
+    padding: 1.6rem;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: $bg-dark;
+  color: $text-light;
+}
+
+footer a {
+  color: $text-light;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: $primary;
+}
+
+/* =========================
+   MEDIA QUERIES
+========================= */
+@media (max-width: 767px) {
+  .project-img {
+    height: 180px;
+  }
+}
